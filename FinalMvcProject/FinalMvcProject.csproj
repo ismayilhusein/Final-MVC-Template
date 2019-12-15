@@ -137,7 +137,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Accordion.cs" />
+    <Compile Include="Models\BlogLIst.cs" />
     <Compile Include="Models\BookAppoitment.cs" />
+    <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\CustomerSlider.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\DoctorContact.cs" />
@@ -147,13 +149,16 @@
     <Compile Include="Models\Education.cs" />
     <Compile Include="Models\Faqs.cs" />
     <Compile Include="Models\FullService.cs" />
+    <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\HeaderSlider.cs" />
     <Compile Include="Models\HomeService.cs" />
+    <Compile Include="Models\Investigations.cs" />
     <Compile Include="Models\LatestPost.cs" />
     <Compile Include="Models\Missions.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\PricingTable.cs" />
     <Compile Include="Models\Testimoials.cs" />
+    <Compile Include="Models\Treatments.cs" />
     <Compile Include="Models\WhoWeAre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
