@@ -13,14 +13,5 @@ namespace FinalMvcProject.Controllers
         {
             return View();
         }
-
-        public ActionResult Home2()
-        {
-            return View();
-        }
-        public ActionResult Home3()
-        {
-            return View();
-        }
     }
 }

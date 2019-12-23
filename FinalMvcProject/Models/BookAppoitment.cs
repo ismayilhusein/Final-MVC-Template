@@ -11,6 +11,7 @@ namespace FinalMvcProject.Models
         public string Name { get; set; }
         public string Number { get; set; }
         public string Email { get; set; }
+
         public DateTime Date { get; set; }
         public string Note { get; set; }
 

@@ -10,13 +10,16 @@ namespace FinalMvcProject.Models
     public class HeaderSlider
     {
         public int Id { get; set; }
-        [Required]
-
+        public string Image { get; set; }
         public string Title { get; set; }
-        public string Desc { get; set; }
-        public string Photo { get; set; }
-        [NotMapped]
-        public HttpPostedFileBase PhotoUpload { get; set; }
+        public string Body { get; set; }
+        public string Excerpt { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
         public bool Status { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase ImageUpload { get; set; }
+        
     }
 }

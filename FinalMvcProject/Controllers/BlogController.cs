@@ -13,10 +13,7 @@ namespace FinalMvcProject.Controllers
         {
             return View();
         }
-        public ActionResult Grid()
-        {
-            return View();
-        }
+      
         public ActionResult Single()
         {
             return View();
