@@ -13,6 +13,7 @@ namespace FinalMvcProject.Models
         [NotMapped]
         public HttpPostedFileBase PhotoUpload { get; set; }
         public int DepartmentId { get; set; }
+        public Department Department { get; set; }
         public bool Status { get; set; }
 
     }

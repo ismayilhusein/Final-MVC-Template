@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BlogsController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\loginController.cs" />
     <Compile Include="Areas\Admin\Models\Login.cs" />
@@ -152,6 +153,10 @@
     <Compile Include="Migrations\201912232304026_CreatedAllModels.Designer.cs">
       <DependentUpon>201912232304026_CreatedAllModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001211437125_CreatedRelation.cs" />
+    <Compile Include="Migrations\202001211437125_CreatedRelation.Designer.cs">
+      <DependentUpon>202001211437125_CreatedRelation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Author.cs" />
@@ -173,7 +178,10 @@
     <Compile Include="Models\Testimoials.cs" />
     <Compile Include="Models\Treatments.cs" />
     <Compile Include="Models\AboutUs.cs" />
+    <Compile Include="Models\Week.cs" />
+    <Compile Include="Models\WorkTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Public\css\sb-admin-2.css" />
@@ -2108,6 +2116,10 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Blogs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Blogs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Blogs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Blogs\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Public\fonts\poppins\Poppins-Black.eot" />
     <Content Include="Public\fonts\poppins\Poppins-Black.ttf" />
@@ -2223,6 +2235,11 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Doctor\Index.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Shared\_Department.cshtml" />
+    <Content Include="Views\Shared\_DoctorSlider.cshtml" />
+    <Content Include="Views\Shared\_Services.cshtml" />
+    <Content Include="Views\Shared\_Departments.cshtml" />
+    <Content Include="Views\Shared\_Testimonials.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -2233,6 +2250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912232304026_CreatedAllModels.resx">
       <DependentUpon>201912232304026_CreatedAllModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001211437125_CreatedRelation.resx">
+      <DependentUpon>202001211437125_CreatedRelation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
