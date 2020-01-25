@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace FinalMvcProject.Controllers
 {
-    public class ServicesController : Controller
+    public class ServicesController : BaseController
     {
         // GET: Services
         public ActionResult Index()

@@ -31,6 +31,8 @@ namespace FinalMvcProject.DAL
         public DbSet<Post> Posts { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Subscribe> Subscribes { get; set; }
+        public DbSet<SocialLink> SocialLinks { get; set; }
+        public DbSet<WorkTime> WorkTimes { get; set; }
 
     }
 }

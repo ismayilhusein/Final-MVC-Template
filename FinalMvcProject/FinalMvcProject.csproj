@@ -134,6 +134,7 @@
     <Compile Include="Areas\Admin\Controllers\loginController.cs" />
     <Compile Include="Areas\Admin\Models\Login.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
@@ -157,6 +158,10 @@
     <Compile Include="Migrations\202001211437125_CreatedRelation.Designer.cs">
       <DependentUpon>202001211437125_CreatedRelation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001251257262_CreateLinksModel.cs" />
+    <Compile Include="Migrations\202001251257262_CreateLinksModel.Designer.cs">
+      <DependentUpon>202001251257262_CreateLinksModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Author.cs" />
@@ -174,6 +179,7 @@
     <Compile Include="Models\Missions.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Setting.cs" />
+    <Compile Include="Models\SocialLink.cs" />
     <Compile Include="Models\Subscribe.cs" />
     <Compile Include="Models\Testimoials.cs" />
     <Compile Include="Models\Treatments.cs" />
@@ -1965,6 +1971,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Upload\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Public\vendor\bootstrap\js\bootstrap.bundle.js.map" />
@@ -2253,6 +2261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001211437125_CreatedRelation.resx">
       <DependentUpon>202001211437125_CreatedRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001251257262_CreateLinksModel.resx">
+      <DependentUpon>202001251257262_CreateLinksModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

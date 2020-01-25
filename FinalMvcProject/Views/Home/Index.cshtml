@@ -9,54 +9,29 @@
         <!--BANNER-->
         <div class="uni-banner">
             <div class="uni-owl-one-item owl-carousel owl-theme">
-                <div class="item">
-                    <div class="uni-banner-img uni-background-5"></div>
-                    <div class="content animated" data-animation="flipInX" data-delay="0.9s">
-                        <div class="container">
-                            <div class="caption">
-                                <h1>Let us protect your health</h1>
-                                <p>
-                                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-                                    <br>
-                                    Donec eu libero sit amet quam egestas semper.
-                                </p>
-                                <a href="#">our services</a>
+                @foreach (var slide in Model.HeaderSliders)
+                {
+                    <div class="item">
+                        <div class="uni-banner-img uni-background-5" style="background-image:url('/Upload/@slide.Image')"></div>
+                        <div class="content animated" data-animation="flipInX" data-delay="0.9s">
+                            <div class="container">
+                                <div class="caption">
+                                    <h1>@slide.Title</h1>
+                                    <p>
+                                        @slide.Body
+                                    </p>
+                                    @if (!string.IsNullOrEmpty(slide.BtnUrl))
+                                    {
+                                        <a href="@slide.BtnUrl">@slide.BtnText</a>
+                                    }
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="uni-banner-img uni-background-6"></div>
-                    <div class="content animated" data-animation="flipInX" data-delay="0.9s">
-                        <div class="container">
-                            <div class="caption">
-                                <h1>Let us protect your health</h1>
-                                <p>
-                                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-                                    <br>
-                                    Donec eu libero sit amet quam egestas semper.
-                                </p>
-                                <a href="#">our services</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="uni-banner-img uni-background-7"></div>
-                    <div class="content animated" data-animation="flipInX" data-delay="0.9s">
-                        <div class="container">
-                            <div class="caption">
-                                <h1>Let us protect your health</h1>
-                                <p>
-                                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
-                                    <br>
-                                    Donec eu libero sit amet quam egestas semper.
-                                </p>
-                                <a href="#">our services</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                }
+
+
             </div>
         </div>
 

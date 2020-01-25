@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace FinalMvcProject.Controllers
 {
-    public class DepartmentsController : Controller
+    public class DepartmentsController : BaseController
     {
         // GET: Departments
         public ActionResult Index()

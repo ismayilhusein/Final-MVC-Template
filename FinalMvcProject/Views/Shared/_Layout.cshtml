@@ -1,7 +1,10 @@
-﻿<!doctype html>
-<html lang="en">
+﻿@{ 
+    List<SocialLink> socialLinks = ViewBag.SocialLink as List<SocialLink>;
+    Setting setting = ViewBag.Setting as Setting;
+}
 
-<!-- Mirrored from html.univertheme.com/medicare/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Dec 2019 12:36:04 GMT -->
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,7 +50,7 @@
                                 <div class="col-md-2">
                                     <!--LOGO-->
                                     <div class="wrapper-logo">
-                                        <a class="logo-default" href="@Url.Action("index","home")"><img src="~/Public/images/logo.png" alt="" class="img-responsive"></a>
+                                        <a class="logo-default" href="@Url.Action("index","home")"><img src="~/Upload/@setting.HeaderLogo" alt="" class="img-responsive"></a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -127,17 +130,16 @@
                             <div class="footer-main-content-elements">
                                 <div class="footer-main-content-element col-md-3 col-sm-6">
                                     <aside class="widget">
-                                        <div class="widget-title uni-uppercase"><a href="#"><img src="~/Public/images/logowhite.png" alt="" class="img-responsive"></a></div>
+                                        <div class="widget-title uni-uppercase"><a href="#"><img src="~/Upload/@setting.FooterLogo" alt="" class="img-responsive"></a></div>
                                         <div class="widget-content">
                                             <p>
-                                                Pellentesque habitant morbi tristique senectus et netus et malesuada fame ac
-                                                turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget.
+                                                @setting.Text
                                             </p>
                                             <div class="uni-info-contact">
                                                 <ul>
-                                                    <li> <i class="fa fa-map-marker" aria-hidden="true"></i> 45 Queen's Park Rd, Brighton,  UK</li>
-                                                    <li><i class="fa fa-phone" aria-hidden="true"></i> (094) 123 4567 - (094) 123 4568</li>
-                                                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i> medicareplus@domain.com</li>
+                                                    <li> <i class="fa fa-map-marker" aria-hidden="true"></i>@setting.Location</li>
+                                                    <li><i class="fa fa-phone" aria-hidden="true"></i> @setting.Number</li>
+                                                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i> @setting.Email</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -195,11 +197,12 @@
                                                 <div class="uni-social">
                                                     <h4>Follow us</h4>
                                                     <ul>
-                                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                        @foreach (var item in socialLinks)
+                                                        {
+                                                          <li><a href="@item.Url" target="_blank"><i class="fa fa-@item.Icon" aria-hidden="true"></i></a></li>
+                                                        }
+                                                        
+                                                        
                                                     </ul>
                                                 </div>
                                             </div>
@@ -258,7 +261,5 @@
 
     <script src="~/Public/js/main.js"></script>
 </body>
-
-<!-- Mirrored from html.univertheme.com/medicare/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Dec 2019 12:36:30 GMT -->
 </html>
 

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace FinalMvcProject.Controllers
 {
-    public class BlogController : Controller
+    public class BlogController : BaseController
     {
         // GET: Blog
         public ActionResult List()
