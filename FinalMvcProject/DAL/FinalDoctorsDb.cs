@@ -15,6 +15,7 @@ namespace FinalMvcProject.DAL
         public DbSet<HeaderSlider> HeaderSliders { get; set; }
         public DbSet<BookAppoitment> BookAppoitments { get; set; }
         public DbSet<Department> Departments { get; set; }
+        public Department Department { get; set; }
         public DbSet<Doctors> Doctors { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<CustomerSlider> CustomerSliders { get; set; }

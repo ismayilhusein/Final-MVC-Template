@@ -10,7 +10,7 @@ namespace FinalMvcProject.Models
     {
         public Doctors()
         {
-            WorkTimes = new HashSet<WorkTime>();
+            Department = new Department();
         }
         public int Id { get; set; }
         public string Photo { get; set; }
@@ -21,8 +21,9 @@ namespace FinalMvcProject.Models
         public DateTime CreateDate { get; set; }
         public DateTime? EndedDate { get; set; }
         public bool Status { get; set; }
+        public string Body { get; set; }
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
-        public ICollection<WorkTime> WorkTimes { get; set; }
+       
     }
 }

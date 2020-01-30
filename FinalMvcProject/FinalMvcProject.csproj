@@ -162,6 +162,42 @@
     <Compile Include="Migrations\202001251257262_CreateLinksModel.Designer.cs">
       <DependentUpon>202001251257262_CreateLinksModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001271410277_AddIconToDepartment.cs" />
+    <Compile Include="Migrations\202001271410277_AddIconToDepartment.Designer.cs">
+      <DependentUpon>202001271410277_AddIconToDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001271612129_AddIconToDoctors.cs" />
+    <Compile Include="Migrations\202001271612129_AddIconToDoctors.Designer.cs">
+      <DependentUpon>202001271612129_AddIconToDoctors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001271623100_DeleteIconToDoctors.cs" />
+    <Compile Include="Migrations\202001271623100_DeleteIconToDoctors.Designer.cs">
+      <DependentUpon>202001271623100_DeleteIconToDoctors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001271627428_DeleteIconToService.cs" />
+    <Compile Include="Migrations\202001271627428_DeleteIconToService.Designer.cs">
+      <DependentUpon>202001271627428_DeleteIconToService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001271741173_CreateRElationToService.cs" />
+    <Compile Include="Migrations\202001271741173_CreateRElationToService.Designer.cs">
+      <DependentUpon>202001271741173_CreateRElationToService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001271744418_CreateRelationToDepartment.cs" />
+    <Compile Include="Migrations\202001271744418_CreateRelationToDepartment.Designer.cs">
+      <DependentUpon>202001271744418_CreateRelationToDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001271748228_CreateRel.cs" />
+    <Compile Include="Migrations\202001271748228_CreateRel.Designer.cs">
+      <DependentUpon>202001271748228_CreateRel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001271751484_DeleteDpartmentId.cs" />
+    <Compile Include="Migrations\202001271751484_DeleteDpartmentId.Designer.cs">
+      <DependentUpon>202001271751484_DeleteDpartmentId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001301233093_DeleteIconToFaqs.cs" />
+    <Compile Include="Migrations\202001301233093_DeleteIconToFaqs.Designer.cs">
+      <DependentUpon>202001301233093_DeleteIconToFaqs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Author.cs" />
@@ -2264,6 +2300,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001251257262_CreateLinksModel.resx">
       <DependentUpon>202001251257262_CreateLinksModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271410277_AddIconToDepartment.resx">
+      <DependentUpon>202001271410277_AddIconToDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271612129_AddIconToDoctors.resx">
+      <DependentUpon>202001271612129_AddIconToDoctors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271623100_DeleteIconToDoctors.resx">
+      <DependentUpon>202001271623100_DeleteIconToDoctors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271627428_DeleteIconToService.resx">
+      <DependentUpon>202001271627428_DeleteIconToService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271741173_CreateRElationToService.resx">
+      <DependentUpon>202001271741173_CreateRElationToService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271744418_CreateRelationToDepartment.resx">
+      <DependentUpon>202001271744418_CreateRelationToDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271748228_CreateRel.resx">
+      <DependentUpon>202001271748228_CreateRel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001271751484_DeleteDpartmentId.resx">
+      <DependentUpon>202001271751484_DeleteDpartmentId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001301233093_DeleteIconToFaqs.resx">
+      <DependentUpon>202001301233093_DeleteIconToFaqs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

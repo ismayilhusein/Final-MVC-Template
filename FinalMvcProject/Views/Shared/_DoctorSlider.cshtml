@@ -1,4 +1,6 @@
-﻿<div class="uni-home-1-our-doctor">
+﻿@model  List<Doctors>
+
+<div class="uni-home-1-our-doctor">
     <div class="uni-shortcode-team-2 uni-background-2">
         <div class="container">
 
@@ -8,126 +10,31 @@
             </div>
 
             <div class="uni-owl-four-item owl-carousel owl-theme">
-                <div class="item">
-                    <div class="uni-team-default">
-                        <div class="item-img">
-                            <img src="~/Public/images/team/img.png" alt="" class="img-responsive">
-                        </div>
-                        <div class="item-caption">
-                            <div class="col-md-3 col-sm-3 col-xs-3 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="~/Public/images/icons_box/icon_4/icon-5.png" alt="">
-                                </div>
+                @foreach (var item in  Model)
+                {
+                    <div class="item">
+                        <div class="uni-team-default">
+                            <div class="item-img">
+                                <img src="~/Public/images/team/@item.Photo" alt="" class="img-responsive">
                             </div>
-                            <div class="col-md-9 col-sm-9 col-xs-9 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>adam jonson</h4>
-                                    <span>Cardiologist</span>
+                            <div class="item-caption">
+                                <div class="col-md-3 col-sm-3 col-xs-3 uni-clear-padding">
+                                    <div class="item-icons">
+                                        <img src="~/Public/images/icons_box/icon_4/@item.Department.Icon" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="uni-team-default">
-                        <div class="item-img">
-                            <img src="~/Public/images/team/img1.png" alt="" class="img-responsive">
-                        </div>
-                        <div class="item-caption">
-                            <div class="col-md-3 col-sm-3 col-xs-3 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="~/Public/images/icons_box/icon_4/icon-4.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-9 col-sm-9 col-xs-9 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>Henrik larssom</h4>
-                                    <span>neurologist</span>
+                                <div class="col-md-9 col-sm-9 col-xs-9 uni-clear-padding">
+                                    <div class="item-title">
+                                        <h4>@item.FullName</h4>
+                                        <span>@item.Degrees</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="uni-team-default">
-                        <div class="item-img">
-                            <img src="~/Public/images/team/img2.png" alt="" class="img-responsive">
-                        </div>
-                        <div class="item-caption">
-                            <div class="col-md-3 col-sm-3 col-xs-3 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="~/Public/images/icons_box/icon_4/icon-3.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-9 col-sm-9 col-xs-9 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>amanda smith</h4>
-                                    <span>Ophthalmology doctor</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="uni-team-default">
-                        <div class="item-img">
-                            <img src="~/Public/images/team/img3.png" alt="" class="img-responsive">
-                        </div>
-                        <div class="item-caption">
-                            <div class="col-md-3 col-sm-3 col-xs-3 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="~/Public/images/icons_box/icon_4/icon-2.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-9 col-sm-9 col-xs-9 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>david martin</h4>
-                                    <span>Cancer doctor</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="uni-team-default">
-                        <div class="item-img">
-                            <img src="~/Public/images/team/img.png" alt="" class="img-responsive">
-                        </div>
-                        <div class="item-caption">
-                            <div class="col-md-3 col-sm-3 col-xs-3 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="~/Public/images/icons_box/icon_4/icon-5.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-9 col-sm-9 col-xs-9 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>adam jonson</h4>
-                                    <span>Cardiologist</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="uni-team-default">
-                        <div class="item-img">
-                            <img src="~/Public/images/team/img1.png" alt="" class="img-responsive">
-                        </div>
-                        <div class="item-caption">
-                            <div class="col-md-3 col-sm-3 col-xs-3 uni-clear-padding">
-                                <div class="item-icons">
-                                    <img src="~/Public/images/icons_box/icon_4/icon-4.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-9 col-sm-9 col-xs-9 uni-clear-padding">
-                                <div class="item-title">
-                                    <h4>Henrik larssom</h4>
-                                    <span>neurologist</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                }
+
+
             </div>
         </div>
     </div>
