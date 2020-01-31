@@ -22,5 +22,8 @@ namespace FinalMvcProject.Models
         public string Number { get; set; }
         [MaxLength(50)]
         public string Email { get; set; }
+        public string AboutImage { get; set; }
+        public string AboutBody { get; set; }
+
     }
 }

@@ -246,45 +246,21 @@
                                 <div class="uni-line"></div>
                             </div>
                             <div class="uni-home-latest-post-body">
-                                <div class="item">
-                                    <div class="item-img">
-                                        <a href="#"><img src="~/Public/images/home1/lastestpost/img2.png" alt="" class="img-responsive"></a>
+
+                                @foreach (var item in Model.Blogs)
+                                {
+
+                                    <div class="item">
+                                        <div class="item-img">
+                                            <a href="#"><img src="~/Upload/@item.Image" alt="" class="img-responsive"></a>
+                                        </div>
+                                        <div class="item-caption">
+                                            <h4><a href="@Url.Action("list","blog")">@item.Title</a></h4>
+                                            <span class="time">@item.CreatedAt.ToString("MMM dd,yyy")</span>
+                                        </div>
                                     </div>
-                                    <div class="item-caption">
-                                        <h4><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit?</a></h4>
-                                        <span class="time">June 12, 2017</span>
-                                    </div>
-                                </div>
-                                <div class="uni-divider"></div>
-                                <div class="item">
-                                    <div class="item-img">
-                                        <a href="#"><img src="~/Public/images/home1/lastestpost/img3.png" alt="" class="img-responsive"></a>
-                                    </div>
-                                    <div class="item-caption">
-                                        <h4><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit?</a></h4>
-                                        <span class="time">June 12, 2017</span>
-                                    </div>
-                                </div>
-                                <div class="uni-divider"></div>
-                                <div class="item">
-                                    <div class="item-img">
-                                        <a href="#"><img src="~/Public/images/home1/lastestpost/img4.png" alt="" class="img-responsive"></a>
-                                    </div>
-                                    <div class="item-caption">
-                                        <h4><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit?</a></h4>
-                                        <span class="time">June 12, 2017</span>
-                                    </div>
-                                </div>
-                                <div class="uni-divider"></div>
-                                <div class="item">
-                                    <div class="item-img">
-                                        <a href="#"><img src="~/Public/images/home1/lastestpost/img5.png" alt="" class="img-responsive"></a>
-                                    </div>
-                                    <div class="item-caption">
-                                        <h4><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit?</a></h4>
-                                        <span class="time">June 12, 2017</span>
-                                    </div>
-                                </div>
+                                    <div class="uni-divider"></div>
+                                }
                             </div>
                         </div>
                     </div>

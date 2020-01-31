@@ -7,7 +7,7 @@ namespace FinalMvcProject.Models
 {
     public enum Week
     {
-        Monday=1,
+        Monday,
         Thusday,
         Sunday
     }

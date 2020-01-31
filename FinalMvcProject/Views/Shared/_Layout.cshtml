@@ -1,6 +1,8 @@
 ﻿@{ 
     List<SocialLink> socialLinks = ViewBag.SocialLink as List<SocialLink>;
     Setting setting = ViewBag.Setting as Setting;
+      List<Blog> blogs = ViewBag.Blog as List<Blog>;
+
 }
 
 <!doctype html>
@@ -168,18 +170,15 @@
                                         <div class="widget-content">
                                             <div class="uni-footer-latest-post">
                                                 <ul>
-                                                    <li>
-                                                        <h4><a href="#">Lorem ipsum dolor sit amet, consectetuer</a></h4>
-                                                        <span class="time">june 12, 2017</span>
-                                                    </li>
-                                                    <li>
-                                                        <h4><a href="#">Aliquam tincidunt mauris eu risus amet</a></h4>
-                                                        <span class="time">june 12, 2017</span>
-                                                    </li>
-                                                    <li>
-                                                        <h4><a href="#">Morbi in sem quis dui placerat ornare column</a></h4>
-                                                        <span class="time">june 12, 2017</span>
-                                                    </li>
+                                                    @foreach (var item in blogs)
+                                                    {
+                                                        <li>
+                                                            <h4><a href="@Url.Action("list","blog")">@item.Title</a></h4>
+                                                            <span class="time">@item.CreatedAt.ToString("MMM dd,yyy")</span>
+                                                        </li>
+                                                    }
+
+
                                                 </ul>
                                             </div>
                                         </div>

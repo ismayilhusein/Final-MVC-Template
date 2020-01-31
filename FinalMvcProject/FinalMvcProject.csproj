@@ -198,6 +198,26 @@
     <Compile Include="Migrations\202001301233093_DeleteIconToFaqs.Designer.cs">
       <DependentUpon>202001301233093_DeleteIconToFaqs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001311200430_DeleteId.cs" />
+    <Compile Include="Migrations\202001311200430_DeleteId.Designer.cs">
+      <DependentUpon>202001311200430_DeleteId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001311210236_AddForignKey.cs" />
+    <Compile Include="Migrations\202001311210236_AddForignKey.Designer.cs">
+      <DependentUpon>202001311210236_AddForignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001311243190_addserviceDepartment.cs" />
+    <Compile Include="Migrations\202001311243190_addserviceDepartment.Designer.cs">
+      <DependentUpon>202001311243190_addserviceDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001311429125_AddSettingRows.cs" />
+    <Compile Include="Migrations\202001311429125_AddSettingRows.Designer.cs">
+      <DependentUpon>202001311429125_AddSettingRows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001311447194_DeleteLatestPost.cs" />
+    <Compile Include="Migrations\202001311447194_DeleteLatestPost.Designer.cs">
+      <DependentUpon>202001311447194_DeleteLatestPost.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Author.cs" />
@@ -211,7 +231,6 @@
     <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\HeaderSlider.cs" />
     <Compile Include="Models\Service.cs" />
-    <Compile Include="Models\LatestPost.cs" />
     <Compile Include="Models\Missions.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Setting.cs" />
@@ -223,6 +242,7 @@
     <Compile Include="Models\Week.cs" />
     <Compile Include="Models\WorkTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2327,6 +2347,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001301233093_DeleteIconToFaqs.resx">
       <DependentUpon>202001301233093_DeleteIconToFaqs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001311200430_DeleteId.resx">
+      <DependentUpon>202001311200430_DeleteId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001311210236_AddForignKey.resx">
+      <DependentUpon>202001311210236_AddForignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001311243190_addserviceDepartment.resx">
+      <DependentUpon>202001311243190_addserviceDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001311429125_AddSettingRows.resx">
+      <DependentUpon>202001311429125_AddSettingRows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001311447194_DeleteLatestPost.resx">
+      <DependentUpon>202001311447194_DeleteLatestPost.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

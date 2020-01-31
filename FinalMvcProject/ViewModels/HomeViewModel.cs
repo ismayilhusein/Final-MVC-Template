@@ -15,6 +15,6 @@ namespace FinalMvcProject.ViewModels
         public List<Service> Services { get; set; }
         public List<CustomerSlider> CustomerSliders { get; set; }
         public List<Faqs> Faqs { get; set; }
-        public List<LatestPost> LatestPosts { get; set; }
+        public List<Blog> Blogs { get; set; }
     }
 }

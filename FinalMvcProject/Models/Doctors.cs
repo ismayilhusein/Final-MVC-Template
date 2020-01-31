@@ -8,10 +8,7 @@ namespace FinalMvcProject.Models
 {
     public class Doctors
     {
-        public Doctors()
-        {
-            Department = new Department();
-        }
+        
         public int Id { get; set; }
         public string Photo { get; set; }
         [NotMapped]
@@ -22,6 +19,7 @@ namespace FinalMvcProject.Models
         public DateTime? EndedDate { get; set; }
         public bool Status { get; set; }
         public string Body { get; set; }
+        [ForeignKey("Department")]
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
        

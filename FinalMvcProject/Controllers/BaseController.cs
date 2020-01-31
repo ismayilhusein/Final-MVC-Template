@@ -16,6 +16,8 @@ namespace FinalMvcProject.Controllers
             _context = new FinalDoctorsDb();
             ViewBag.SocialLink = _context.SocialLinks.OrderBy(o => o.OrderBy).ToList();
             ViewBag.Setting = _context.Settings.FirstOrDefault();
+            ViewBag.Blog = _context.Blogs.OrderByDescending(b=>b.Id).Take(3).ToList();
+
         }
     }
 }

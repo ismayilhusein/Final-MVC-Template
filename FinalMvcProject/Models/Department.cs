@@ -7,11 +7,7 @@ namespace FinalMvcProject.Models
 {
     public class Department
     {
-        public Department()
-        {
-            Doctors = new HashSet<Doctors>();
-            Galleries = new HashSet<Gallery>();
-        }
+       
         public int Id { get; set; }
         public string Title { get; set; }
         public string Icon { get; set; }
@@ -20,10 +16,9 @@ namespace FinalMvcProject.Models
         public bool Status { get; set; }
 
         public ICollection<Doctors> Doctors { get; set; }
-        public int DoctorId { get; set; }
         public ICollection<Gallery> Galleries { get; set; }
-        public int GaleryId { get; set; }
-     
+        public ICollection<Service> Services { get; set; }
+
 
 
     }
