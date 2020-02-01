@@ -218,6 +218,10 @@
     <Compile Include="Migrations\202001311447194_DeleteLatestPost.Designer.cs">
       <DependentUpon>202001311447194_DeleteLatestPost.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001312356351_DeleteTestimonialsModel.cs" />
+    <Compile Include="Migrations\202001312356351_DeleteTestimonialsModel.Designer.cs">
+      <DependentUpon>202001312356351_DeleteTestimonialsModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Author.cs" />
@@ -236,7 +240,6 @@
     <Compile Include="Models\Setting.cs" />
     <Compile Include="Models\SocialLink.cs" />
     <Compile Include="Models\Subscribe.cs" />
-    <Compile Include="Models\Testimoials.cs" />
     <Compile Include="Models\Treatments.cs" />
     <Compile Include="Models\AboutUs.cs" />
     <Compile Include="Models\Week.cs" />
@@ -2362,6 +2365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001311447194_DeleteLatestPost.resx">
       <DependentUpon>202001311447194_DeleteLatestPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001312356351_DeleteTestimonialsModel.resx">
+      <DependentUpon>202001312356351_DeleteTestimonialsModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

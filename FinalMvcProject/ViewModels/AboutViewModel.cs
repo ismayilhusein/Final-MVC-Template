@@ -10,6 +10,10 @@ namespace FinalMvcProject.ViewModels
     {
         public Setting Settings { get; set; }
         public List<Doctors> Doctors { get; set; }
+        public List<Missions> Missions { get; set; }
+        public Service Service { get; set; }
+        public List<Department> Departments { get; set; }
+        public List<CustomerSlider> CustomerSliders { get; set; }
 
     }
 }

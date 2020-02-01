@@ -1,4 +1,6 @@
-﻿  <!--TESTIMONIALS-->
+﻿ @model List<CustomerSlider>
+
+ <!--TESTIMONIALS-->
 <div class="col-md-4">
     <div class="uni-services-testimonials">
         <div class="uni-services-title">
@@ -7,109 +9,59 @@
         </div>
         <div class="uni-services-testimonials-content">
             <div class="uni-owl-one-item owl-carousel owl-theme">
-                <div class="item">
-                    <div class="uni-shortcode-testimonials-default">
-                        <div class="item-info">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="item-info-img">
-                                        <img src="~/Public/images/testimonial/img.png" alt="" class="img-responsive">
+                @foreach (var item in Model)
+                {
+                    <div class="item">
+                        <div class="uni-shortcode-testimonials-default">
+                            <div class="item-info">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="item-info-img">
+                                            <img src="~/Public/images/testimonial/@item.Photo" alt="" class="img-responsive">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="item-info-title">
-                                        <h4>amanda smith</h4>
-                                        <p class="testimonial_subtitle">myopia patients</p>
+                                    <div class="col-md-9">
+                                        <div class="item-info-title">
+                                            <h4>@item.FullName</h4>
+                                            <p class="testimonial_subtitle">@item.WhatProblems</p>
+                                        </div>
+                                        <div class="uni-divider"></div>
                                     </div>
-                                    <div class="uni-divider"></div>
                                 </div>
                             </div>
+                            <div class="item-caption">
+                                <p>
+                                    @item.Text
+                                </p>
+                            </div>
                         </div>
-                        <div class="item-caption">
-                            <p>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                                turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget.
-                            </p>
-                        </div>
-                    </div>
 
-                    <div class="uni-shortcode-testimonials-default">
-                        <div class="item-info">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="item-info-img">
-                                        <img src="~/Public/images/testimonial/img1.png" alt="" class="img-responsive">
+                        <div class="uni-shortcode-testimonials-default">
+                            <div class="item-info">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="item-info-img">
+                                            <img src="~/Public/images/testimonial/@item.Photo" alt="" class="img-responsive">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="item-info-title">
-                                        <h4>amanda smith</h4>
-                                        <p class="testimonial_subtitle">myopia patients</p>
+                                    <div class="col-md-9">
+                                        <div class="item-info-title">
+                                            <h4>@item.FullName</h4>
+                                            <p class="testimonial_subtitle">@item.WhatProblems</p>
+                                        </div>
+                                        <div class="uni-divider"></div>
                                     </div>
-                                    <div class="uni-divider"></div>
                                 </div>
                             </div>
+                            <div class="item-caption">
+                                <p>
+                                    @item.Text
+                                </p>
+                            </div>
                         </div>
-                        <div class="item-caption">
-                            <p>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                                turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget.
-                            </p>
-                        </div>
-                    </div>
 
-                </div>
-                <div class="item">
-                    <div class="uni-shortcode-testimonials-default">
-                        <div class="item-info">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="item-info-img">
-                                        <img src="~/Public/images/testimonial/img.png" alt="" class="img-responsive">
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="item-info-title">
-                                        <h4>amanda smith</h4>
-                                        <p class="testimonial_subtitle">myopia patients</p>
-                                    </div>
-                                    <div class="uni-divider"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-caption">
-                            <p>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                                turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget.
-                            </p>
-                        </div>
                     </div>
-
-                    <div class="uni-shortcode-testimonials-default">
-                        <div class="item-info">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="item-info-img">
-                                        <img src="~/Public/images/testimonial/img1.png" alt="" class="img-responsive">
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="item-info-title">
-                                        <h4>amanda smith</h4>
-                                        <p class="testimonial_subtitle">myopia patients</p>
-                                    </div>
-                                    <div class="uni-divider"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-caption">
-                            <p>
-                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-                                turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </div>

@@ -20,10 +20,8 @@ namespace FinalMvcProject.DAL
         public DbSet<Service> Services { get; set; }
         public DbSet<CustomerSlider> CustomerSliders { get; set; }
         public DbSet<Faqs> Faqs { get; set; }
-       
         public DbSet<AboutUs> AboutUs { get; set; }
         public DbSet<Missions> Missions { get; set; }
-        public DbSet<Testimoials> Testimoials { get; set; }
         public DbSet<ContactUs> ContactUs { get; set; }
         public DbSet<Treatments> Treatments { get; set; }
         public DbSet<Author> Authors { get; set; }
