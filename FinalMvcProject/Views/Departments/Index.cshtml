@@ -1,4 +1,6 @@
-﻿<div id="main-content" class="site-main-content">
+﻿@model DepartmentViewModel
+
+<div id="main-content" class="site-main-content">
     <section class="site-content-area">
 
         <div class="uni-banner-default uni-background-1">
@@ -19,9 +21,9 @@
             </div>
         </div>
 
-        @*@{
-            Html.RenderPartial("~/Views/Shared/_Department.cshtml");
-        }*@
+        @{
+            Html.RenderPartial("~/Views/Shared/_Department.cshtml",model:Model.Departments);
+        }
 
     </section>
 </div>

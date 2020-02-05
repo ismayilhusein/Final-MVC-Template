@@ -222,6 +222,14 @@
     <Compile Include="Migrations\202001312356351_DeleteTestimonialsModel.Designer.cs">
       <DependentUpon>202001312356351_DeleteTestimonialsModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002050949232_EditServiceModel.cs" />
+    <Compile Include="Migrations\202002050949232_EditServiceModel.Designer.cs">
+      <DependentUpon>202002050949232_EditServiceModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002050953426_DeletePhotoToService.cs" />
+    <Compile Include="Migrations\202002050953426_DeletePhotoToService.Designer.cs">
+      <DependentUpon>202002050953426_DeletePhotoToService.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Author.cs" />
@@ -246,7 +254,11 @@
     <Compile Include="Models\WorkTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\BlogViewModel.cs" />
+    <Compile Include="ViewModels\DepartmentViewModel.cs" />
+    <Compile Include="ViewModels\DoctorViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\ServiceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Public\css\sb-admin-2.css" />
@@ -2307,6 +2319,7 @@
     <Content Include="Views\Shared\_Services.cshtml" />
     <Content Include="Views\Shared\_Departments.cshtml" />
     <Content Include="Views\Shared\_Testimonials.cshtml" />
+    <Content Include="Views\Shared\_ServiceItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -2368,6 +2381,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001312356351_DeleteTestimonialsModel.resx">
       <DependentUpon>202001312356351_DeleteTestimonialsModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002050949232_EditServiceModel.resx">
+      <DependentUpon>202002050949232_EditServiceModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002050953426_DeletePhotoToService.resx">
+      <DependentUpon>202002050953426_DeletePhotoToService.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

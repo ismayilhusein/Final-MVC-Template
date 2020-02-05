@@ -12,8 +12,12 @@ namespace FinalMvcProject.Controllers
         // GET: Departments
         public ActionResult Index()
         {
+            DepartmentViewModel model = new DepartmentViewModel
+            {
+                Departments = _context.Departments.Include("Doctors").OrderByDescending(d => d.Id).Take(6).ToList(),
+            };
            
-            return View();
+            return View(model);
         }
         public ActionResult Single()
         {
