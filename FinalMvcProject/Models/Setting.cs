@@ -18,8 +18,11 @@ namespace FinalMvcProject.Models
         public string Text { get; set; }
         [MaxLength(100)]
         public string Location { get; set; }
+        [MaxLength(50),Required]
+        public string Country { get; set; }
         [MaxLength(50)]
         public string Number { get; set; }
+
         [MaxLength(50)]
         public string Email { get; set; }
         public string AboutImage { get; set; }

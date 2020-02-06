@@ -1,4 +1,6 @@
-﻿<div id="main-content" class="site-main-content">
+﻿@model DepartmentViewModel
+
+<div id="main-content" class="site-main-content">
     <section class="site-content-area">
 
         <div class="uni-banner-default uni-background-1">
@@ -71,14 +73,14 @@
                                 </h3>
                                 <ul>
                                     <li>
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i> 45 Queen's Park Rd, Brighton
-                                        United Kingdom
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i> @Model.Setting.Location
+                                        @Model.Setting.Country
                                     </li>
                                     <li>
-                                        <i class="fa fa-phone" aria-hidden="true"></i> (094) 123 4567
+                                        <i class="fa fa-phone" aria-hidden="true"></i> @Model.Setting.Number
                                     </li>
                                     <li>
-                                        <i class="fa fa-envelope" aria-hidden="true"></i> medicareplus@domain.com
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>@Model.Setting.Email
                                     </li>
                                 </ul>
                             </div>

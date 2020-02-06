@@ -21,7 +21,13 @@ namespace FinalMvcProject.Controllers
         }
         public ActionResult Single()
         {
-            return View();
+            DepartmentViewModel model= new DepartmentViewModel
+            {
+                Setting = _context.Settings.FirstOrDefault(),
+                Treatments =_context.Treatments.Take(7).OrderByDescending(t=>t.Id).ToList()
+
+            };
+            return View(model);
         }
     }
 }

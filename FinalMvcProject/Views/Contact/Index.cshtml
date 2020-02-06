@@ -1,4 +1,4 @@
-﻿
+﻿@model ContactUsViewModel
 @{
     ViewBag.Title = "Index";
 }
@@ -90,8 +90,8 @@
                                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                                             </div>
                                             <div class="text-holder">
-                                                <p>45 Queen's Park Rd, Brighton</p>
-                                                <span>United Kingdom</span>
+                                                <p>@Model.Setting.Location</p>
+                                                <span>@Model.Setting.Country</span>
                                             </div>
                                         </div>
 
@@ -108,7 +108,7 @@
                                                 </div>
                                                 <div class="text-holder">
                                                     <p>Call Us</p>
-                                                    <span>(094) 123 4567</span>
+                                                    <span>@Model.Setting.Number</span>
                                                 </div>
                                             </div>
                                             <div class="item">
@@ -117,7 +117,7 @@
                                                 </div>
                                                 <div class="text-holder">
                                                     <p>Send A Message</p>
-                                                    <span>medicareplus@domain.com</span>
+                                                    <span>@Model.Setting.Email</span>
                                                 </div>
                                             </div>
                                         </div>

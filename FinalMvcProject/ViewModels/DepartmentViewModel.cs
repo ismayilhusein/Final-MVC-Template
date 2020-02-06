@@ -9,5 +9,8 @@ namespace FinalMvcProject.ViewModels
     public class DepartmentViewModel
     {
         public List<Department> Departments { get; set; }
+        public Setting Setting { get; set; }
+        public List<Treatments> Treatments { get; set; }
+        
     }
 }

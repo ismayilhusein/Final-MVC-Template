@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FinalMvcProject.ViewModels;
 
 namespace FinalMvcProject.Controllers
 {
@@ -11,7 +12,11 @@ namespace FinalMvcProject.Controllers
         // GET: Contact
         public ActionResult Index()
         {
-            return View();
+            ContactUsViewModel model = new ContactUsViewModel
+            {
+                Setting = _context.Settings.FirstOrDefault()
+            };
+            return View(model);
         }
     }
 }
