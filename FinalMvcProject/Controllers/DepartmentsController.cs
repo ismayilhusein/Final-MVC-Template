@@ -24,7 +24,12 @@ namespace FinalMvcProject.Controllers
             DepartmentViewModel model= new DepartmentViewModel
             {
                 Setting = _context.Settings.FirstOrDefault(),
-                Treatments =_context.Treatments.Take(7).OrderByDescending(t=>t.Id).ToList()
+                Treatments =_context.Treatments.Take(7).OrderByDescending(t=>t.Id).ToList(),
+                Department = _context.Departments.FirstOrDefault(),
+                Doctors = _context.Doctors.OrderByDescending(d=>d.Id).Take(3).ToList(),
+                DoctorLinks = _context.DoctorLinks.Take(4).ToList()
+                
+                
 
             };
             return View(model);

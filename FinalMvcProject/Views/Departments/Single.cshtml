@@ -14,7 +14,7 @@
                 <!-- End page title -->
                 <!-- Breadcrumbs -->
                 <ul class="breadcrumbs">
-                    <li><a href="#">home</a></li>
+                    <li><a href="@Url.Action("index","home")">home</a></li>
                     <li><a href="#">departments</a></li>
                     <li><a href="#">cardilogy </a></li>
                 </ul>
@@ -92,41 +92,10 @@
                             <div class="uni-single-departments-cardiology">
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <img src="~/Public/images/departments/img.jpg" alt="" class="img-responsive">
+                                        <img src="~/Public/images/departments/@Model.Department.Image" alt="" class="img-responsive">
                                     </div>
                                     <div class="col-md-7">
-                                        <h3 class="uni-single-departments-right-title">Cardiology</h3>
-                                        <p>
-                                            Pellentesque habitant morbi tristique senectus et netus et malesuada
-                                            fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-                                            ultricies eget, tempor sit amet, ante. Donec eu libero sit amet
-                                            quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-                                            eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-                                            Vestibulum erat wisi.
-                                        </p>
-                                        <ul>
-                                            <li>
-                                                <p>Lorem ipsum dolor sit amet, consectetuer</p>
-                                            </li>
-                                            <li>
-                                                <p>Lorem ipsum dolor sit amet, consectetuer</p>
-                                            </li>
-                                            <li>
-                                                <p>Vestibulum auctor dapibus neque</p>
-                                            </li>
-                                            <li>
-                                                <p>Morbi in sem quis dui placerat ornare</p>
-                                            </li>
-                                            <li>
-                                                <p>Donec eu libero sit amet quam egestas semper</p>
-                                            </li>
-                                            <li>
-                                                <p>Aliquam tincidunt mauris eu risus</p>
-                                            </li>
-                                            <li>
-                                                <p>Vestibulum auctor dapibus neque</p>
-                                            </li>
-                                        </ul>
+                                        @Html.Raw(Model.Department.Body)
                                     </div>
                                 </div>
                             </div>
@@ -138,27 +107,14 @@
                                         <h3 class="uni-single-departments-right-title">treatments</h3>
                                         <div class="uni-divider"></div>
                                         <ul>
-                                            <li>
-                                                Echocardiography <span>$200</span>
-                                            </li>
-                                            <li>
-                                                Implantable Cardiac Monitor (ICM) <span>$200</span>
-                                            </li>
-                                            <li>
-                                                Treadmill stress testing <span>$200</span>
-                                            </li>
-                                            <li>
-                                                Transoesophageal echocardiogram (TOE) <span>$200</span>
-                                            </li>
-                                            <li>
-                                                Pacemaker checks <span>$200</span>
-                                            </li>
-                                            <li>
-                                                Electrophysiology (EP) Study <span>$200</span>
-                                            </li>
-                                            <li>
-                                                Holter monitoring <span>$200</span>
-                                            </li>
+                                            @foreach (var item in Model.Treatments)
+                                            {
+                                                <li>
+                                                    @item.Name <span>@item.Price</span>
+                                                </li>
+                                            }
+
+
                                         </ul>
                                     </div>
                                 </div>
@@ -167,27 +123,13 @@
                                         <h3 class="uni-single-departments-right-title">investigations</h3>
                                         <div class="uni-divider"></div>
                                         <ul>
-                                            <li>
-                                                Echocardiography <span>$200</span>
-                                            </li>
-                                            <li>
-                                                Implantable Cardiac Monitor (ICM) <span>$200</span>
-                                            </li>
-                                            <li>
-                                                Treadmill stress testing <span>$200</span>
-                                            </li>
-                                            <li>
-                                                Transoesophageal echocardiogram (TOE) <span>$200</span>
-                                            </li>
-                                            <li>
-                                                Pacemaker checks <span>$200</span>
-                                            </li>
-                                            <li>
-                                                Electrophysiology (EP) Study <span>$200</span>
-                                            </li>
-                                            <li>
-                                                Holter monitoring <span>$200</span>
-                                            </li>
+                                            @foreach (var item in Model.Treatments)
+                                            {
+                                                <li>
+                                                    @item.Name <span>@item.Price</span>
+                                                </li>
+                                            }
+
                                         </ul>
                                     </div>
                                 </div>
@@ -200,186 +142,58 @@
 
                                 <div class="uni-single-department-doctor-body">
                                     <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="uni-single-department-doctor-item">
-                                                <div class="item-img">
-                                                    <img src="~/Public/images/team/img.png" alt="" class="img-responsive">
-                                                </div>
-                                                <div class="item-caption">
-                                                    <div class="item-caption-head">
-                                                        <div class="col-md-3  col-sm-2 col-xs-3 uni-clear-padding">
-                                                            <div class="item-icons">
-                                                                <img src="~/Public/images/icons_box/icon_4/icon-5.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-9  col-sm-10 col-xs-9 uni-clear-padding">
-                                                            <div class="item-title">
-                                                                <h4>henrik larsson</h4>
-                                                                <span>neurologist</span>
-                                                            </div>
-                                                        </div>
+                                        @foreach (var item in Model.Doctors)
+                                        {
+                                            <div class="col-md-4">
+                                                <div class="uni-single-department-doctor-item">
+                                                    <div class="item-img">
+                                                        <img src="~/Public/images/team/@item.Photo" alt="" class="img-responsive">
                                                     </div>
-                                                    <div class="item-caption-info">
-                                                        <table class="table">
-                                                            <thead>
-                                                                <tr>
-                                                                    <td>Degrees</td>
-                                                                    <td>M.D. of Medicine</td>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>Mon - fri</td>
-                                                                    <td>8:00 am - 17:00 pm</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>saturday</td>
-                                                                    <td>10:00 am - 15:00 pm</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Sunday</td>
-                                                                    <td>8:00 am - 12:00 pm</td>
-                                                                </tr>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <td colspan="2">
-                                                                        <ul>
-                                                                            <li>
-                                                                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                                                            </li>
-                                                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                                                            <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                                                                        </ul>
-                                                                    </td>
-                                                                </tr>
-                                                            </tfoot>
-                                                        </table>
+                                                    <div class="item-caption">
+                                                        <div class="item-caption-head">
+                                                            <div class="col-md-3  col-sm-2 col-xs-3 uni-clear-padding">
+                                                                <div class="item-icons">
+                                                                    <img src="~/Public/images/icons_box/icon_4/@item.Department.Icon" alt="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-9  col-sm-10 col-xs-9 uni-clear-padding">
+                                                                <div class="item-title">
+                                                                    <h4>@item.FullName</h4>
+                                                                    <span>@item.Department.Title</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-caption-info">
+                                                            <table class="table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <td>Degrees</td>
+                                                                        <td>@item.Degrees</td>
+                                                                    </tr>
+                                                                </thead>
+                                                                @Html.Raw(item.Body)
+                                                                <tfoot>
+                                                                    <tr>
+                                                                        <td colspan="2">
+                                                                            <ul>
+                                                                                @foreach (var link in Model.DoctorLinks)
+                                                                                {
+                                                                                    <li><a href="@link.Url"><i class="fa fa-@link.Icon" aria-hidden="true"></i></a> </li>
+                                                                                }
+
+
+                                                                            </ul>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tfoot>
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="uni-single-department-doctor-item">
-                                                <div class="item-img">
-                                                    <img src="~/Public/images/team/img1.png" alt="" class="img-responsive">
-                                                </div>
-                                                <div class="item-caption">
-                                                    <div class="item-caption-head">
-                                                        <div class="col-md-3  col-sm-2 col-xs-3 uni-clear-padding">
-                                                            <div class="item-icons">
-                                                                <img src="~/Public/images/icons_box/icon_4/icon-5.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-9  col-sm-10 col-xs-9 uni-clear-padding">
-                                                            <div class="item-title">
-                                                                <h4>amanda smith</h4>
-                                                                <span>Ophthalmology doctor</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-caption-info">
-                                                        <table class="table">
-                                                            <thead>
-                                                                <tr>
-                                                                    <td>Degrees</td>
-                                                                    <td>M.D. of Medicine</td>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>Mon - fri</td>
-                                                                    <td>8:00 am - 17:00 pm</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>saturday</td>
-                                                                    <td>10:00 am - 15:00 pm</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Sunday</td>
-                                                                    <td>8:00 am - 12:00 pm</td>
-                                                                </tr>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <td colspan="2">
-                                                                        <ul>
-                                                                            <li>
-                                                                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                                                            </li>
-                                                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                                                            <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                                                                        </ul>
-                                                                    </td>
-                                                                </tr>
-                                                            </tfoot>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="uni-single-department-doctor-item">
-                                                <div class="item-img">
-                                                    <img src="~/Public/images/team/img2.png" alt="" class="img-responsive">
-                                                </div>
-                                                <div class="item-caption">
-                                                    <div class="item-caption-head">
-                                                        <div class="col-md-3 col-sm-2 col-xs-3 uni-clear-padding">
-                                                            <div class="item-icons">
-                                                                <img src="~/Public/images/icons_box/icon_4/icon-5.png" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-9  col-sm-10 col-xs-9 uni-clear-padding">
-                                                            <div class="item-title">
-                                                                <h4>david martin</h4>
-                                                                <span>Cancer doctor</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item-caption-info">
-                                                        <table class="table">
-                                                            <thead>
-                                                                <tr>
-                                                                    <td>Degrees</td>
-                                                                    <td>M.D. of Medicine</td>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>Mon - fri</td>
-                                                                    <td>8:00 am - 17:00 pm</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>saturday</td>
-                                                                    <td>10:00 am - 15:00 pm</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Sunday</td>
-                                                                    <td>8:00 am - 12:00 pm</td>
-                                                                </tr>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <tr>
-                                                                    <td colspan="2">
-                                                                        <ul>
-                                                                            <li>
-                                                                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                                                            </li>
-                                                                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                                                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                                                            <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                                                                        </ul>
-                                                                    </td>
-                                                                </tr>
-                                                            </tfoot>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        }
+
+
                                     </div>
                                 </div>
                             </div>

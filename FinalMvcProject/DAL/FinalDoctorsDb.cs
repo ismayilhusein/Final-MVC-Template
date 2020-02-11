@@ -32,6 +32,7 @@ namespace FinalMvcProject.DAL
         public DbSet<Subscribe> Subscribes { get; set; }
         public DbSet<SocialLink> SocialLinks { get; set; }
         public DbSet<WorkTime> WorkTimes { get; set; }
+        public DbSet<DoctorLink> DoctorLinks { get; set; }
 
     }
 }
