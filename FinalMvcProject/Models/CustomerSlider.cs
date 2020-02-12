@@ -18,7 +18,7 @@ namespace FinalMvcProject.Models
         public string FullName { get; set; }
         [Required, MaxLength(50)]
         public string WhatProblems { get; set; }
-        [Required, MaxLength(500)]
+        [Required, Column(TypeName ="ntext")]
         public string Text { get; set; }
         public bool Status { get; set; }
     }

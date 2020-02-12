@@ -12,6 +12,7 @@ namespace FinalMvcProject.ViewModels
         public List<Doctors> Doctors { get; set; }
         public List<Missions> Missions { get; set; }
         public Service Service { get; set; }
+        public IEnumerable<Service> Services { get; set; }
         public List<Department> Departments { get; set; }
         public List<CustomerSlider> CustomerSliders { get; set; }
 

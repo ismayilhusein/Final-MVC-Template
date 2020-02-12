@@ -11,7 +11,7 @@
                             <a href="#"><img src="~/Public/images/icons_box/icon_1/@item.Icon" alt="" class="img-responsive"></a>
                         </div>
                         <div class="item-caption">
-                            <h4><a href="@Url.Action("single","departments")">@item.Title</a></h4>
+                            <h4><a href="@Url.Action("single","departments",new {id=item.Id })">@item.Title</a></h4>
                             <p>
                                 @item.Content
                             </p>
@@ -19,10 +19,6 @@
                     </div>
                 </div>
             }
-
-
-
-
 
 
         </div>

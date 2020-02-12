@@ -270,12 +270,35 @@
     <Compile Include="Migrations\202002111228418_CreateRelationToDoctors.Designer.cs">
       <DependentUpon>202002111228418_CreateRelationToDoctors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002111627550_testing.cs" />
+    <Compile Include="Migrations\202002111627550_testing.Designer.cs">
+      <DependentUpon>202002111627550_testing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002111636331_DeleteSubscribeModel.cs" />
+    <Compile Include="Migrations\202002111636331_DeleteSubscribeModel.Designer.cs">
+      <DependentUpon>202002111636331_DeleteSubscribeModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002111647091_DeleteContactUsModel.cs" />
+    <Compile Include="Migrations\202002111647091_DeleteContactUsModel.Designer.cs">
+      <DependentUpon>202002111647091_DeleteContactUsModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002111652468_UpdateDb.cs" />
+    <Compile Include="Migrations\202002111652468_UpdateDb.Designer.cs">
+      <DependentUpon>202002111652468_UpdateDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002121343410_ServiceAddedPhoto.cs" />
+    <Compile Include="Migrations\202002121343410_ServiceAddedPhoto.Designer.cs">
+      <DependentUpon>202002121343410_ServiceAddedPhoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002121551170_ServiceAddedcolumn.cs" />
+    <Compile Include="Migrations\202002121551170_ServiceAddedcolumn.Designer.cs">
+      <DependentUpon>202002121551170_ServiceAddedcolumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Blog.cs" />
     <Compile Include="Models\BookAppoitment.cs" />
-    <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\CustomerSlider.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\DoctorLink.cs" />
@@ -288,7 +311,6 @@
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Setting.cs" />
     <Compile Include="Models\SocialLink.cs" />
-    <Compile Include="Models\Subscribe.cs" />
     <Compile Include="Models\Treatments.cs" />
     <Compile Include="Models\AboutUs.cs" />
     <Compile Include="Models\Week.cs" />
@@ -2460,6 +2482,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002111228418_CreateRelationToDoctors.resx">
       <DependentUpon>202002111228418_CreateRelationToDoctors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002111627550_testing.resx">
+      <DependentUpon>202002111627550_testing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002111636331_DeleteSubscribeModel.resx">
+      <DependentUpon>202002111636331_DeleteSubscribeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002111647091_DeleteContactUsModel.resx">
+      <DependentUpon>202002111647091_DeleteContactUsModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002111652468_UpdateDb.resx">
+      <DependentUpon>202002111652468_UpdateDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002121343410_ServiceAddedPhoto.resx">
+      <DependentUpon>202002121343410_ServiceAddedPhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002121551170_ServiceAddedcolumn.resx">
+      <DependentUpon>202002121551170_ServiceAddedcolumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

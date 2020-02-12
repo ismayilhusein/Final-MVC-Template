@@ -18,6 +18,7 @@ namespace FinalMvcProject.Controllers
                 Settings =_context.Settings.FirstOrDefault(),
                 Missions = _context.Missions.OrderByDescending(m=>m.Id).Take(6).ToList(),
                 Service = _context.Services.FirstOrDefault(),
+                Services = _context.Services.Include("Departments").OrderByDescending(sl => sl.DepartmentsId).Take(6).ToList(),
                 Departments = _context.Departments.OrderByDescending(d=>d.Id).Take(6).ToList(),
                 CustomerSliders = _context.CustomerSliders.OrderByDescending(t=>t.Id).ToList()
             };

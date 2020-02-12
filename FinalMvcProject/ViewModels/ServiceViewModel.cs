@@ -8,7 +8,7 @@ namespace FinalMvcProject.ViewModels
 {
     public class ServiceViewModel
     {
-        public List<Service> Services { get; set; }
+        public IEnumerable<Service> Services { get; set; }
         public List<Department> Departments { get; set; }
         public List<CustomerSlider> CustomerSliders { get; set; }
 

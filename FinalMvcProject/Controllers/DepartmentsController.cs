@@ -19,14 +19,14 @@ namespace FinalMvcProject.Controllers
            
             return View(model);
         }
-        public ActionResult Single()
+        public ActionResult Single(int? id)
         {
             DepartmentViewModel model= new DepartmentViewModel
             {
                 Setting = _context.Settings.FirstOrDefault(),
                 Treatments =_context.Treatments.Take(7).OrderByDescending(t=>t.Id).ToList(),
-                Department = _context.Departments.FirstOrDefault(),
-                Doctors = _context.Doctors.OrderByDescending(d=>d.Id).Take(3).ToList(),
+                Department = _context.Departments.Include("Doctors").FirstOrDefault(x=>x.Id==id),
+                Doctors = _context.Doctors.Include("Department").OrderByDescending(d=>d.Id).Take(3).ToList(),
                 DoctorLinks = _context.DoctorLinks.Take(4).ToList()
                 
                 
