@@ -19,11 +19,11 @@ namespace FinalMvcProject.Controllers
             return View(model);
         }
       
-        public ActionResult Single()
+        public ActionResult Single(int? id)
         {
             BlogViewModel model = new BlogViewModel
             {
-               SingleBlog = _context.Blogs.Include("Author").OrderByDescending(o=>o.Id).FirstOrDefault()
+               SingleBlog = _context.Blogs.Include("Author").OrderByDescending(o=>o.Id).FirstOrDefault(x => x.Id == id)
             };
             return View(model);
         }

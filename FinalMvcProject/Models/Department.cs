@@ -26,7 +26,7 @@ namespace FinalMvcProject.Models
         public string Image { get; set; }
 
         public List<Doctors> Doctors { get; set; }
-        public ICollection<Gallery> Galleries { get; set; }
+        public List<Gallery> Galleries { get; set; }
         public ICollection<Service> Services { get; set; }
 
 

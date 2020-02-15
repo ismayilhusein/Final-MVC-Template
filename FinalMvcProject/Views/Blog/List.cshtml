@@ -37,8 +37,8 @@
                                                 <div class="content-inner">
                                                     <div class="uni-entry-top">
                                                         <div class="thumbnail-img">
-                                                            <a href="@Url.Action("single","blog",item.Id)" title="">
-                                                                <img src="~/Public/images/blog_list/main/@item.Image" alt="" title="" class="img-responsive">
+                                                            <a href="@Url.Action("single","blog",new {id=item.Id })" title="">
+                                                                <img src="~/Upload/blog/@item.Image" alt="" title="" class="img-responsive">
                                                             </a>
                                                         </div>
                                                     </div>
@@ -56,13 +56,13 @@
 
                                                             <header class="uni-entry-header">
                                                                 <h2 class="uni-entry-title">
-                                                                    <a href="@Url.Action("single","blog",item.Id)" rel="">@item.Title</a>
+                                                                    <a href="@Url.Action("single","blog",new {id=item.Id })" rel="">@item.Title</a>
                                                                 </h2>
                                                             </header>
 
                                                             <div class="uni-entry-meta">
                                                                 <span class="uni-author">
-                                                                    <a href="#" rel="author"><i class="fa fa-calendar" aria-hidden="true"></i> @item.CreatedAt.ToString("MMMM dd ,yyy")</a>
+                                                                    <a href="#" rel="author"><i class="fa fa-calendar" aria-hidden="true"></i> @item.CreatedAt.ToString("MMMM d ,yyy")</a>
                                                                 </span>
                                                                 <span class="uni-comment-total">
                                                                     <a href="#" class="comments-link"><i class="fa fa-user" aria-hidden="true"></i> @item.Author.Name</a>
@@ -75,7 +75,7 @@
                                                                 </p>
                                                             </div>
                                                             <div class="readmore">
-                                                                <a href="@Url.Action("single","blog")"><i class="icomoon icon-up"></i>Read More</a>
+                                                                <a href="@Url.Action("single","blog" ,new {id=item.Id })"><i class="icomoon icon-up"></i>Read More</a>
                                                             </div>
                                                         </div>
                                                     </div>

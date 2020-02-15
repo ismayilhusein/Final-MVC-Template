@@ -88,19 +88,12 @@ namespace FinalMvcProject.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            return View(blog);
-        }
-
-        // POST: Admin/Blogs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Blog blog = db.Blogs.Find(id);
             db.Blogs.Remove(blog);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+       
 
         protected override void Dispose(bool disposing)
         {

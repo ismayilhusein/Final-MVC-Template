@@ -9,7 +9,7 @@ namespace FinalMvcProject.ViewModels
     public class HomeViewModel
     {
         public List<HeaderSlider> HeaderSliders { get; set; }
-        public List<BookAppoitment> BookAppoitments { get; set; }
+        public BookAppoitment BookAppoitments { get; set; }
         public List<Department> Departments { get; set; }
         public List<Doctors> Doctors { get; set; }
         public List<Service> Services { get; set; }

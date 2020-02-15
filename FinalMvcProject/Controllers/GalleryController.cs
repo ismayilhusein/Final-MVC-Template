@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalMvcProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,8 @@ namespace FinalMvcProject.Controllers
         // GET: Gallery
         public ActionResult Index()
         {
-            return View();
+            List<Department> departments = _context.Departments.Include("Galleries").OrderByDescending(x => x.Id).Take(9).ToList();
+            return View(departments);
         }
     }
 }

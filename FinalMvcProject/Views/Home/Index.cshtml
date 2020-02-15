@@ -85,8 +85,9 @@
                                     <h3>Book appoitment</h3>
                                     <div class="uni-underline"></div>
                                 </div>
-
-                                <form action="#">
+                                @using (Html.BeginForm("Appointment", "Home", FormMethod.Post))
+                                {
+                               <form action="#">
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="input-group form-group">
@@ -117,6 +118,8 @@
                                         </div>
                                     </div>
                                 </form>
+                                }
+                          
                             </div>
                         </div>
                     </div>
@@ -131,7 +134,7 @@
                     <h3>Department</h3>
                     @*<div class="uni-underline"></div>*@   
                     @{
-                        Html.RenderPartial("~/Views/Shared/_Department.cshtml",model:Model.Departments);
+                            Html.RenderPartial("~/Views/Shared/_Department.cshtml", model: Model.Departments);
                     }
                 </div>
             
@@ -252,7 +255,7 @@
 
                                     <div class="item">
                                         <div class="item-img">
-                                            <a href="#"><img src="~/Upload/@item.imagePng" alt="" class="img-responsive"></a>
+                                            <a href="#"><img src="~/Upload/blog/@item.imagePng" alt="" class="img-responsive"></a>
                                         </div>
                                         <div class="item-caption">
                                             <h4><a href="@Url.Action("list","blog")">@item.Title</a></h4>

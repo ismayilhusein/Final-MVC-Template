@@ -18,7 +18,7 @@ namespace FinalMvcProject.Controllers
             HomeViewModel model = new HomeViewModel
             {
                 HeaderSliders = _context.HeaderSliders.OrderByDescending(s => s.Id).ToList(),
-                BookAppoitments = _context.BookAppoitments.ToList(),
+                
                 Departments = _context.Departments.Include("Doctors").OrderByDescending(d => d.Id).Take(6).ToList(),
                 Doctors = _context.Doctors.Include("Department").OrderByDescending(d => d.Id).Take(5).ToList(),
                 Services = _context.Services.Include("Departments").OrderByDescending(sl => sl.DepartmentsId).Take(6).ToList(),
@@ -28,6 +28,33 @@ namespace FinalMvcProject.Controllers
 
             };
             return View(model);
+        }
+        public ActionResult Appointment(HomeViewModel model)
+        {
+            try
+            {
+            BookAppoitment appoitment = new BookAppoitment();
+            appoitment.Name = model.BookAppoitments.Name;
+            appoitment.Number = model.BookAppoitments.Number;
+            appoitment.Email = model.BookAppoitments.Email;
+            appoitment.Date = model.BookAppoitments.Date;
+            appoitment.Note = model.BookAppoitments.Note;
+
+            _context.BookAppoitments.Add(appoitment);
+            _context.SaveChanges();
+
+            int LatestAppointmentId = appoitment.Id;
+
+            }
+            catch (Exception )
+            {
+
+                throw ;
+            }
+
+            
+
+            return RedirectToAction("index");
         }
     }
 }

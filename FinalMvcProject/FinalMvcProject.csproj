@@ -129,9 +129,22 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AuthorsController.cs" />
     <Compile Include="Areas\Admin\Controllers\BlogsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CustomerSlidersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DepartmentsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DoctorLinksController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DoctorsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FaqsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GalleriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HeaderSlidersController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\loginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MissionsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ServicesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SocialLinksController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TreatmentsController.cs" />
     <Compile Include="Areas\Admin\Models\Login.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -294,6 +307,22 @@
     <Compile Include="Migrations\202002121551170_ServiceAddedcolumn.Designer.cs">
       <DependentUpon>202002121551170_ServiceAddedcolumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002141206342_UpdateBlog.cs" />
+    <Compile Include="Migrations\202002141206342_UpdateBlog.Designer.cs">
+      <DependentUpon>202002141206342_UpdateBlog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002141214026_DeletePostModel.cs" />
+    <Compile Include="Migrations\202002141214026_DeletePostModel.Designer.cs">
+      <DependentUpon>202002141214026_DeletePostModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002141217178_DeletePostModelwOrkTimeModel.cs" />
+    <Compile Include="Migrations\202002141217178_DeletePostModelwOrkTimeModel.Designer.cs">
+      <DependentUpon>202002141217178_DeletePostModelwOrkTimeModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002141420529_DeleteAboutUs.cs" />
+    <Compile Include="Migrations\202002141420529_DeleteAboutUs.Designer.cs">
+      <DependentUpon>202002141420529_DeleteAboutUs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Author.cs" />
@@ -308,20 +337,14 @@
     <Compile Include="Models\HeaderSlider.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\Missions.cs" />
-    <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Setting.cs" />
     <Compile Include="Models\SocialLink.cs" />
     <Compile Include="Models\Treatments.cs" />
-    <Compile Include="Models\AboutUs.cs" />
-    <Compile Include="Models\Week.cs" />
-    <Compile Include="Models\WorkTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\BlogViewModel.cs" />
     <Compile Include="ViewModels\ContactUsViewModel.cs" />
     <Compile Include="ViewModels\DepartmentViewModel.cs" />
-    <Compile Include="ViewModels\DoctorViewModel.cs" />
-    <Compile Include="ViewModels\GalleryViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\ServiceViewModel.cs" />
   </ItemGroup>
@@ -2261,9 +2284,47 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Blogs\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Blogs\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Blogs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Blogs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Settings\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Settings\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Settings\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Services\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Services\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Services\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Authors\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Authors\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Authors\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomerSliders\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomerSliders\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\CustomerSliders\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Departments\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Departments\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Departments\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DoctorLinks\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\DoctorLinks\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\DoctorLinks\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Doctors\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Doctors\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Doctors\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Faqs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Faqs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Faqs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Galleries\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Galleries\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Galleries\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HeaderSliders\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\HeaderSliders\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\HeaderSliders\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Missions\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Missions\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Missions\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SocialLinks\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\SocialLinks\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\SocialLinks\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Treatments\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Treatments\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Treatments\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Public\fonts\poppins\Poppins-Black.eot" />
     <Content Include="Public\fonts\poppins\Poppins-Black.ttf" />
@@ -2500,6 +2561,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002121551170_ServiceAddedcolumn.resx">
       <DependentUpon>202002121551170_ServiceAddedcolumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002141206342_UpdateBlog.resx">
+      <DependentUpon>202002141206342_UpdateBlog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002141214026_DeletePostModel.resx">
+      <DependentUpon>202002141214026_DeletePostModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002141217178_DeletePostModelwOrkTimeModel.resx">
+      <DependentUpon>202002141217178_DeletePostModelwOrkTimeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002141420529_DeleteAboutUs.resx">
+      <DependentUpon>202002141420529_DeleteAboutUs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

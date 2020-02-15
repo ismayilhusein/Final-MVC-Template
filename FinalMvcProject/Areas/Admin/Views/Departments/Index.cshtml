@@ -1,0 +1,73 @@
+﻿@model IEnumerable<FinalMvcProject.Models.Department>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container-fluid">
+    <div class="card-header">
+        <a href="@Url.Action("create")" class="btn btn-outline-primary">New Department</a>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Icon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Desc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Content)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Image)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        <img src="~/Public/images/icons_box/icon_1/@item.Icon" width="50" class="bg-dark" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Desc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Content)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        <img src="~/Upload/department/@item.Image" width="100"/>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("edit",new { id = item.Id })">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+
+                        <a onclick="return confirm('Silinsin?')" href="@Url.Action("delete",new { id = item.Id })" class="text-danger">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+
