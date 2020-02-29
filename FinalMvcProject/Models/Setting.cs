@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
 namespace FinalMvcProject.Models
 {
@@ -26,6 +27,9 @@ namespace FinalMvcProject.Models
         [MaxLength(50)]
         public string Email { get; set; }
         public string AboutImage { get; set; }
+        [NotMapped]
+        public HttpPostedFileBase ImageUpload { get; set; }
+        [Required, Column(TypeName = "ntext"),AllowHtml]
         public string AboutBody { get; set; }
 
     }

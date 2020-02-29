@@ -145,6 +145,7 @@
     <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SocialLinksController.cs" />
     <Compile Include="Areas\Admin\Controllers\TreatmentsController.cs" />
+    <Compile Include="Areas\Admin\Filters\Auth.cs" />
     <Compile Include="Areas\Admin\Models\Login.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -322,6 +323,14 @@
     <Compile Include="Migrations\202002141420529_DeleteAboutUs.cs" />
     <Compile Include="Migrations\202002141420529_DeleteAboutUs.Designer.cs">
       <DependentUpon>202002141420529_DeleteAboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002191537393_AddHTMLAllow.cs" />
+    <Compile Include="Migrations\202002191537393_AddHTMLAllow.Designer.cs">
+      <DependentUpon>202002191537393_AddHTMLAllow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002191605520_AddDAteAnothions.cs" />
+    <Compile Include="Migrations\202002191605520_AddDAteAnothions.Designer.cs">
+      <DependentUpon>202002191605520_AddDAteAnothions.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -2573,6 +2582,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002141420529_DeleteAboutUs.resx">
       <DependentUpon>202002141420529_DeleteAboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002191537393_AddHTMLAllow.resx">
+      <DependentUpon>202002191537393_AddHTMLAllow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002191605520_AddDAteAnothions.resx">
+      <DependentUpon>202002191605520_AddDAteAnothions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

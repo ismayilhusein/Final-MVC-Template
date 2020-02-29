@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using System.Web.Mvc;
 
 namespace FinalMvcProject.Models
 {
@@ -20,10 +20,12 @@ namespace FinalMvcProject.Models
         public string Desc { get; set; }
         [Required, MaxLength(300)]
         public string Content { get; set; }
-        [Required,Column(TypeName ="ntext")]
+        [Required,Column(TypeName ="ntext"),AllowHtml]
         public string Body { get; set; }
         public bool Status { get; set; }
         public string Image { get; set; }
+        [NotMapped]
+        public HttpPostedFileBase ImageUpload { get; set; }
 
         public List<Doctors> Doctors { get; set; }
         public List<Gallery> Galleries { get; set; }

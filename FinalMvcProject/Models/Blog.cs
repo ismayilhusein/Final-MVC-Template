@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace FinalMvcProject.Models
 {
@@ -18,7 +19,8 @@ namespace FinalMvcProject.Models
         public HttpPostedFileBase ImageUpload { get; set; }
         
         public string Title { get; set; }
-     
+        [Column(TypeName = "date")]
+        [DataType(DataType.Date)]
         public DateTime CreatedAt { get; set; }
        
         public int UpdateYear { get; set; }
@@ -30,6 +32,7 @@ namespace FinalMvcProject.Models
         
         public string ShortBody { get; set; }
         
+        [Required, Column(TypeName = "ntext"),AllowHtml]
         public string Body { get; set; }
 
         public Author Author { get; set; }
