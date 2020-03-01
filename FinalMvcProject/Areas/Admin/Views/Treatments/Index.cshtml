@@ -4,54 +4,97 @@
     ViewBag.Title = "Index";
 }
 
-    <div class="container-fluid">
+<div class="container-fluid">
 
-        <p>
-            <a href="@Url.Action("create")" class="btn btn-outline-primary">New Treatment</a>
-        </p>
-        <table class="table table-bordered">
+    <p>
+        <a href="@Url.Action("create")" class="btn btn-outline-primary">New Treatment</a>
+    </p>
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Price)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Type)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Status)
-                </th>
-                <th></th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    <a href="@Url.Action("edit",new { id = item.Id })">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
+
+                    <a href="@Url.Action("delete",new { id = item.Id })" class="text-danger sweet-delete">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
             </tr>
+        }
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Price)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Type)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Status)
-                    </td>
-                    <td>
-                        <a href="@Url.Action("edit",new { id = item.Id })">
-                            <i class="fas fa-pencil-alt"></i>
-                        </a>
+    </table>
+</div>
+@section scripts {
+    <script>
+        $(document).ready(function () {
 
-                        <a onclick="return confirm('Silinsin?')" href="@Url.Action("delete",new { id = item.Id })" class="text-danger">
-                            <i class="fas fa-trash"></i>
-                        </a>
-                    </td>
-                </tr>
-            }
+            $(".sweet-delete").click(function (event) {
+                event.preventDefault();
 
-        </table>
-    </div>
+                var sweet = $(this);
+
+                Swal.fire({
+                    title: 'Eminsiniz?',
+                    text: "Melumatlariniz Silinecek",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Beli'
+                }).then((result) => {
+                    if (result.value) {
+
+                        $.ajax({
+                            url: sweet.attr("href"),
+                            success: function () {
+                                Swal.fire(
+                                    'Deactivated!',
+                                    'Your file has been deactivated.',
+                                    'success'
+                                ).then(function (result) {
+                                    if (result.value) {
+                                        location.reload();
+                                    }
+                                })
+                            }
+
+                        });
+
+                    }
+                })
+            });
+
+        });
+    </script>
+}
