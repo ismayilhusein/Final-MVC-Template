@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AuthController.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthorsController.cs" />
     <Compile Include="Areas\Admin\Controllers\BlogsController.cs" />
     <Compile Include="Areas\Admin\Controllers\CustomerSlidersController.cs" />
@@ -139,8 +140,9 @@
     <Compile Include="Areas\Admin\Controllers\GalleriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HeaderSlidersController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Admin\Controllers\loginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\MissionsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RegisterController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServicesController.cs" />
     <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
     <Compile Include="Areas\Admin\Controllers\SocialLinksController.cs" />
@@ -160,6 +162,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\FileManager.cs" />
     <Compile Include="Migrations\201912221523087_CreateAdminStable.cs" />
     <Compile Include="Migrations\201912221523087_CreateAdminStable.Designer.cs">
       <DependentUpon>201912221523087_CreateAdminStable.cs</DependentUpon>
@@ -331,6 +334,18 @@
     <Compile Include="Migrations\202002191605520_AddDAteAnothions.cs" />
     <Compile Include="Migrations\202002191605520_AddDAteAnothions.Designer.cs">
       <DependentUpon>202002191605520_AddDAteAnothions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003021354441_EditPhotoUpload.cs" />
+    <Compile Include="Migrations\202003021354441_EditPhotoUpload.Designer.cs">
+      <DependentUpon>202003021354441_EditPhotoUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003021436050_CreateStztusToBlog.cs" />
+    <Compile Include="Migrations\202003021436050_CreateStztusToBlog.Designer.cs">
+      <DependentUpon>202003021436050_CreateStztusToBlog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003021734436_EditAdminModel.cs" />
+    <Compile Include="Migrations\202003021734436_EditAdminModel.Designer.cs">
+      <DependentUpon>202003021734436_EditAdminModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -2139,6 +2154,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Auth\" />
     <Folder Include="Upload\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
@@ -2334,6 +2350,8 @@
     <Content Include="Areas\Admin\Views\Treatments\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Treatments\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Treatments\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Register\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\login\Login.cshtml" />
     <None Include="packages.config" />
     <Content Include="Public\fonts\poppins\Poppins-Black.eot" />
     <Content Include="Public\fonts\poppins\Poppins-Black.ttf" />
@@ -2588,6 +2606,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002191605520_AddDAteAnothions.resx">
       <DependentUpon>202002191605520_AddDAteAnothions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003021354441_EditPhotoUpload.resx">
+      <DependentUpon>202003021354441_EditPhotoUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003021436050_CreateStztusToBlog.resx">
+      <DependentUpon>202003021436050_CreateStztusToBlog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003021734436_EditAdminModel.resx">
+      <DependentUpon>202003021734436_EditAdminModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

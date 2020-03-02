@@ -16,7 +16,7 @@ namespace FinalMvcProject.Models
         
         public string imagePng { get; set; }
         [NotMapped]
-        public HttpPostedFileBase ImageUpload { get; set; }
+        public HttpPostedFileBase PhotoUpload { get; set; }
         
         public string Title { get; set; }
         [Column(TypeName = "date")]
@@ -37,5 +37,6 @@ namespace FinalMvcProject.Models
 
         public Author Author { get; set; }
         public int AuthorId { get; set; }
+        public bool Status { get; set; }
     }
 }

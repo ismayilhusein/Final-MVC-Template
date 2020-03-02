@@ -7,10 +7,12 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FinalMvcProject.DAL;
+using FinalMvcProject.Filters;
 using FinalMvcProject.Models;
 
 namespace FinalMvcProject.Areas.Admin.Controllers
 {
+    [Auth]
     public class DoctorsController : Controller
     {
         private FinalDoctorsDb db = new FinalDoctorsDb();

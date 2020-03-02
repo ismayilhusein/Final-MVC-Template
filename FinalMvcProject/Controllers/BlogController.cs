@@ -14,7 +14,7 @@ namespace FinalMvcProject.Controllers
         {
             BlogViewModel model = new BlogViewModel
             {
-                Blogs = _context.Blogs.Include("Author").OrderByDescending(b=>b.Id).Take(6).ToList()
+                Blogs = _context.Blogs.Include("Author").OrderByDescending(b=>b.Id).ToList()
             };
             return View(model);
         }

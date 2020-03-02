@@ -1,4 +1,4 @@
-﻿
+﻿@model Admin
 @{
     ViewBag.Title = "Index";
     Layout = null;
@@ -147,6 +147,12 @@
                 <a class="nav-link collapsed" href="@Url.Action("index","settings")" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Setting</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="@Url.Action("index","Register")" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Register</span>
                 </a>
             </li>
             <hr class="sidebar-divider d-none d-md-block">

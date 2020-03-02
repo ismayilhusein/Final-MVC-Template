@@ -7,10 +7,13 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FinalMvcProject.DAL;
+using FinalMvcProject.Filters;
+using FinalMvcProject.Helpers;
 using FinalMvcProject.Models;
 
 namespace FinalMvcProject.Areas.Admin.Controllers
 {
+    [Auth]
     public class BlogsController : Controller
     {
         private FinalDoctorsDb db = new FinalDoctorsDb();
@@ -33,8 +36,19 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Image,Title,CreatedAt,AuthorId,Body")] Blog blog)
+        [ValidateInput(false)]
+        public ActionResult Create( Blog blog)
         {
+            try
+            {
+                blog.Image = FileManager.Upload(blog.PhotoUpload);
+                blog.imagePng = FileManager.Upload(blog.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Blogs.Add(blog);
@@ -65,11 +79,27 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Image,Title,CreatedAt,AuthorId,Body")] Blog blog)
+        public ActionResult Edit([Bind(Include = "Id,Image,ImagePng,PhotoUpload,Title,CreatedAt,AuthorId,Body")] Blog blog)
         {
+            if (blog.PhotoUpload != null)
+            {
+                try
+                {
+                    FileManager.Delete(blog.Image);
+                    blog.Image = FileManager.Upload(blog.PhotoUpload);
+                }
+                catch (Exception e)
+                {
+                    ModelState.AddModelError("PhotoUpload", e.Message);
+                }
+            }
+
             if (ModelState.IsValid)
             {
                 db.Entry(blog).State = EntityState.Modified;
+
+                db.Entry(blog).Property(s => s.Status == true).IsModified = false;
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

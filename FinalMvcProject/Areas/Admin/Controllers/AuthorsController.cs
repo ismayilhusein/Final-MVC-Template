@@ -12,10 +12,11 @@ using FinalMvcProject.Models;
 
 namespace FinalMvcProject.Areas.Admin.Controllers
 {
+    [Auth]
     public class AuthorsController : Controller
     {
         private FinalDoctorsDb db = new FinalDoctorsDb();
-        [Auth]
+       
         // GET: Admin/Authors
         public ActionResult Index()
         {

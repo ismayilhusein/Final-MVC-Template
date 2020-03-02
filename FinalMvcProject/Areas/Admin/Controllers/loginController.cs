@@ -7,9 +7,11 @@ using System.Web.Helpers;
 using FinalMvcProject.DAL;
 using FinalMvcProject.Areas.Admin.Models;
 using FinalMvcProject.Models;
+using FinalMvcProject.Filters;
 
 namespace FinalMvcProject.Areas.Admin.Controllers
 {
+    [Auth]
     public class loginController : Controller
     {
         // GET: Admin/login
@@ -39,6 +41,9 @@ namespace FinalMvcProject.Areas.Admin.Controllers
             if (admin != null && Crypto.VerifyHashedPassword(admin.Password, login.Password))
             {
                 admin.Token = Guid.NewGuid().ToString();
+                admin.Token = Guid.NewGuid().ToString();
+                admin.LastLoginDate = DateTime.Now;
+                admin.ConfirmPassword = admin.Password;
 
                 db.SaveChanges();
 
