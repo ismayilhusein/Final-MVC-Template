@@ -11,7 +11,6 @@ using FinalMvcProject.Filters;
 
 namespace FinalMvcProject.Areas.Admin.Controllers
 {
-    [Auth]
     public class loginController : Controller
     {
         // GET: Admin/login

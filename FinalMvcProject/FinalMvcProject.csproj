@@ -2351,7 +2351,6 @@
     <Content Include="Areas\Admin\Views\Treatments\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Treatments\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Register\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\login\Login.cshtml" />
     <None Include="packages.config" />
     <Content Include="Public\fonts\poppins\Poppins-Black.eot" />
     <Content Include="Public\fonts\poppins\Poppins-Black.ttf" />

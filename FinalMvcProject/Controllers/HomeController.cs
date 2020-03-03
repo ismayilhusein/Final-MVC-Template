@@ -29,16 +29,17 @@ namespace FinalMvcProject.Controllers
             };
             return View(model);
         }
-        public ActionResult Appointment(HomeViewModel model)
+        [HttpPost]
+        public ActionResult Appointment(BookAppoitment model)
         {
             try
             {
             BookAppoitment appoitment = new BookAppoitment();
-            appoitment.Name = model.BookAppoitments.Name;
-            appoitment.Number = model.BookAppoitments.Number;
-            appoitment.Email = model.BookAppoitments.Email;
-            appoitment.Date = model.BookAppoitments.Date;
-            appoitment.Note = model.BookAppoitments.Note;
+            appoitment.Name = model.Name;
+            appoitment.Number = model.Number;
+            appoitment.Email = model.Email;
+            appoitment.Date = model.Date;
+            appoitment.Note = model.Note;
 
             _context.BookAppoitments.Add(appoitment);
             _context.SaveChanges();

@@ -22,7 +22,7 @@ namespace FinalMvcProject.Filters
 
             if (cookie == null)
             {
-                filterContext.Result = new RedirectResult("~/admin/login");
+                filterContext.Result = new RedirectResult("~/admin/login/");
                 return;
             }
 
@@ -30,7 +30,7 @@ namespace FinalMvcProject.Filters
 
             if (admin == null)
             {
-                filterContext.Result = new RedirectResult("~/admin/login");
+                filterContext.Result = new RedirectResult("~/admin/login/");
                 return;
             }
 

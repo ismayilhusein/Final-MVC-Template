@@ -28,14 +28,14 @@ namespace FinalMvcProject.Areas.Admin.Controllers
 
             if (cookie == null)
             {
-                return RedirectToAction("login", new { type = 1 });
+                return RedirectToAction("index","login");
             }
 
             FinalMvcProject.Models.Admin admin = _context.Admins.FirstOrDefault(a => a.Token == cookie.Value);
 
             if (admin == null)
             {
-                return RedirectToAction("login", new { type = 2 });
+                return RedirectToAction("index", "login");
             }
 
             admin.Token = null;
@@ -44,7 +44,8 @@ namespace FinalMvcProject.Areas.Admin.Controllers
 
             Response.Cookies["token"].Expires = DateTime.Now.AddDays(-1);
 
-            return RedirectToAction("login", new { type = 3 });
+
+            return RedirectToAction("index", "login");
         }
     }
 }

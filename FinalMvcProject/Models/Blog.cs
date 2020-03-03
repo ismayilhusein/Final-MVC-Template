@@ -17,10 +17,14 @@ namespace FinalMvcProject.Models
         public string imagePng { get; set; }
         [NotMapped]
         public HttpPostedFileBase PhotoUpload { get; set; }
-        
+
+        [NotMapped]
+        public HttpPostedFileBase PhotoUploadPng { get; set; }
+
         public string Title { get; set; }
         [Column(TypeName = "date")]
         [DataType(DataType.Date)]
+        [Display(Name = "Created At")]
         public DateTime CreatedAt { get; set; }
        
         public int UpdateYear { get; set; }
@@ -36,6 +40,7 @@ namespace FinalMvcProject.Models
         public string Body { get; set; }
 
         public Author Author { get; set; }
+        [Display(Name ="Author")]
         public int AuthorId { get; set; }
         public bool Status { get; set; }
     }

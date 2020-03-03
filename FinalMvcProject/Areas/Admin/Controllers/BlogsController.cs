@@ -21,13 +21,14 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // GET: Admin/Blogs
         public ActionResult Index()
         {
-            return View(db.Blogs.ToList());
+            return View(db.Blogs.Include("Author").ToList());
         }
 
        
         // GET: Admin/Blogs/Create
         public ActionResult Create()
         {
+            ViewBag.Authors = db.Authors.ToList();
             return View();
         }
 
@@ -41,8 +42,8 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         {
             try
             {
+                blog.imagePng = FileManager.Upload(blog.PhotoUploadPng);
                 blog.Image = FileManager.Upload(blog.PhotoUpload);
-                blog.imagePng = FileManager.Upload(blog.PhotoUpload);
 
             }
             catch (Exception e)
@@ -70,7 +71,9 @@ namespace FinalMvcProject.Areas.Admin.Controllers
             if (blog == null)
             {
                 return HttpNotFound();
+
             }
+            ViewBag.Authors = db.Authors.ToList();
             return View(blog);
         }
 

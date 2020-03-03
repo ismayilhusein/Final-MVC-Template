@@ -56,21 +56,22 @@
                                         <div class="uni-line"></div>
                                     </div>
                                     <div class="uni-send-a-message-body">
-                                        <form action="#">
+                                        <form action="@Url.Action("Appointment", "home")" method="post">
                                             <div class="input-group form-group">
                                                 <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control" name="name" value="" placeholder="your name">
+                                                <input type="text" class="form-control" name="Name" value="" placeholder="your name">
                                             </div>
                                             <div class="input-group form-group">
                                                 <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                                <input type="tel" class="form-control" name="phone" value="" placeholder="phone number">
+                                                <input type="tel" class="form-control" name="Number" value="" placeholder="phone number">
                                             </div>
                                             <div class="input-group form-group">
                                                 <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                                                <input type="email" class="form-control" name="email" value="" placeholder="email">
+                                                <input type="email" class="form-control" name="Email" value="" placeholder="email">
+                                                <input type="date" hidden name="Date" value="@DateTime.Now">
                                             </div>
                                             <div class="input-group form-group">
-                                                <textarea id="message" name="phone" class="form-control" placeholder="note"></textarea>
+                                                <textarea id="message" name="Note" class="form-control" placeholder="note"></textarea>
                                             </div>
 
                                             <button class="vk-btn vk-btn-send">send</button>

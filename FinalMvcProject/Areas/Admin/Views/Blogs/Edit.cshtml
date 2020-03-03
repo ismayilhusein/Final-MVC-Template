@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Edit";
+    List<Author> authors = ViewBag.Authors as List<Author>;
 }
     <div class="container-fluid">
         <h2>Edit Blog</h2>
@@ -43,8 +44,12 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.AuthorId, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.AuthorId, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.AuthorId, "", new { @class = "text-danger" })
+                        <select name="AuthorId" id="AuthorId" class="form-control">
+                            @foreach (var item in authors)
+                            {
+                                <option value="@item.Id" @(item.Id==Model.AuthorId ? "selected":"")>@item.Name</option>
+                            }
+                        </select>
                     </div>
                 </div>
 

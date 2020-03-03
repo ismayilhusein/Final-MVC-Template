@@ -6,51 +6,49 @@ using System.Web;
 
 namespace FinalMvcProject.Helpers
 {
-    public static class FileManager
+    public class FileManager
     {
-        public static string UploadPath = HttpContext.Current.Server.MapPath("~/Uploads");
+        public static string UploadPath = HttpContext.Current.Server.MapPath("~/Upload/");
 
-        public static string Upload(HttpPostedFileBase file, string allowedTypes = "image/png|image/jpeg|image/gif|image/jpg", int maxSize = 1024)
+        public static string Upload(HttpPostedFileBase file, string allowTypes = "image/png|image/jpeg|image/gif", int maxSize = 1024)
         {
             if (file == null)
             {
-                throw new NullReferenceException("File cannot be null");
+                throw new NullReferenceException("The file cannot be null");
             }
 
             if (file.ContentLength / 1024 > maxSize)
             {
-                throw new Exception("File size max be 1024kb");
+                throw new Exception("The size of file can be max 1024KB");
             }
 
-            if (!allowedTypes.Split('|').Contains(file.ContentType))
+            if (!allowTypes.Split('|').Contains(file.ContentType))
             {
-                throw new Exception("File type is not acceptable");
+                throw new Exception("The type of file is not acceptable");
             }
 
-            string filename = Path.Combine(CreatePath(), Guid.NewGuid().ToString() + "-" + file.FileName);
-            file.SaveAs(Path.Combine(UploadPath, filename));
+            string fileName = Path.Combine(CreatePath(), Guid.NewGuid().ToString() + "-" + file.FileName);
+            file.SaveAs(Path.Combine(UploadPath, fileName));
 
-            return filename;
+            return fileName;
         }
 
-        public static void Delete(string filename)
+        public static void Delete(string fileName)
         {
-            if (string.IsNullOrEmpty(filename))
+            if (string.IsNullOrEmpty(fileName))
             {
-                throw new NullReferenceException("Filename cannot be null");
+                throw new NullReferenceException("The filename cannot be null");
             }
 
-
-            if (!File.Exists(Path.Combine(UploadPath, filename)))
+            if (!File.Exists(Path.Combine(UploadPath, fileName)))
             {
-                throw new Exception("File doesnt exists");
+                throw new Exception("This file does not exist");
             }
 
-
-            File.Delete(Path.Combine(UploadPath, filename));
+            File.Delete(Path.Combine(UploadPath, fileName));
         }
 
-        private static string CreatePath()
+        public static string CreatePath()
         {
             DateTime now = DateTime.Now;
 
