@@ -8,11 +8,12 @@ using System.Web;
 using System.Web.Mvc;
 using FinalMvcProject.DAL;
 using FinalMvcProject.Filters;
+using FinalMvcProject.Helpers;
 using FinalMvcProject.Models;
 
 namespace FinalMvcProject.Areas.Admin.Controllers
 {
-    [Auth]
+   
     public class CustomerSlidersController : Controller
     {
         private FinalDoctorsDb db = new FinalDoctorsDb();
@@ -33,8 +34,20 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Photo,FullName,WhatProblems,Text,Status")] CustomerSlider customerSlider)
+        [ValidateInput(false)]
+        public ActionResult Create( CustomerSlider customerSlider)
         {
+            try
+            {
+                customerSlider.Photo = FileManager.Upload(customerSlider.PhotoUpload);
+  
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
+
+
             if (ModelState.IsValid)
             {
                 db.CustomerSliders.Add(customerSlider);
@@ -65,11 +78,27 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Photo,FullName,WhatProblems,Text,Status")] CustomerSlider customerSlider)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Id,Photo,FullName,WhatProblems,Text,Status,PhotoUpload")] CustomerSlider customerSlider)
         {
+           
+            
+                try
+                {
+                  
+                    customerSlider.Photo = FileManager.Upload(customerSlider.PhotoUpload);
+                }
+                catch (Exception e)
+                {
+                    ModelState.AddModelError("PhotoUpload", e.Message);
+                }
+            
+
             if (ModelState.IsValid)
             {
                 db.Entry(customerSlider).State = EntityState.Modified;
+               
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using FinalMvcProject.DAL;
 using FinalMvcProject.Filters;
+using FinalMvcProject.Helpers;
 using FinalMvcProject.Models;
 
 namespace FinalMvcProject.Areas.Admin.Controllers
@@ -36,8 +37,18 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Image,Title,Body,BtnText,BtnUrl,CreatedAt,UpdatedAt,Status")] HeaderSlider headerSlider)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "Id,ImageUpload,Title,Body,BtnText,BtnUrl,CreatedAt,UpdatedAt,Status")] HeaderSlider headerSlider)
         {
+            try
+            {
+                headerSlider.Image = FileManager.Upload(headerSlider.ImageUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.HeaderSliders.Add(headerSlider);
@@ -68,8 +79,18 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Image,Title,Body,BtnText,BtnUrl,CreatedAt,UpdatedAt,Status")] HeaderSlider headerSlider)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Id,Image,ImageUpload,Title,Body,BtnText,BtnUrl,CreatedAt,UpdatedAt,Status")] HeaderSlider headerSlider)
         {
+            try
+            {
+                headerSlider.Image = FileManager.Upload(headerSlider.ImageUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(headerSlider).State = EntityState.Modified;

@@ -32,7 +32,7 @@
             {
                 <tr>
                     <td>
-                        <img  src="~/Upload/@item.Image" width="100" height="100"  style="object-fit:cover"/>
+                        <img src="~/Upload/@item.Image" width="100" height="100" style="object-fit:cover" />
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Title)
@@ -59,8 +59,7 @@
 </div>
 
 @section scripts {
-    <script>
-        $(document).ready(function () {
+    <script>$(document).ready(function () {
 
             $(".sweet-delete").click(function (event) {
                 event.preventDefault();
@@ -98,6 +97,5 @@
                 })
             });
 
-        });
-    </script>
+        });</script>
 }

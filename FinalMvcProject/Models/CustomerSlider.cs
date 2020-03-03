@@ -11,7 +11,7 @@ namespace FinalMvcProject.Models
     public class CustomerSlider
     {
         public int Id { get; set; }
-        [Required, MaxLength(50)]
+        [ MaxLength(200)]
         public string Photo { get; set; }
         [NotMapped]
         public HttpPostedFileBase PhotoUpload { get; set; }

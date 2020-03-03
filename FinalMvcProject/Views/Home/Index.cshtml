@@ -12,13 +12,13 @@
                 @foreach (var slide in Model.HeaderSliders)
                 {
                     <div class="item">
-                        <div class="uni-banner-img uni-background-5" style="background-image:url('/Upload/@slide.Image')"></div>
+                        <div class="uni-banner-img uni-background-5" style="background-image:url('~/Upload/@slide.Image')"></div>
                         <div class="content animated" data-animation="flipInX" data-delay="0.9s">
                             <div class="container">
                                 <div class="caption">
                                     <h1>@slide.Title</h1>
                                     <p>
-                                        @slide.Body
+                                       @Html.Raw( slide.Body)
                                     </p>
                                     @if (!string.IsNullOrEmpty(slide.BtnUrl))
                                     {
@@ -185,7 +185,7 @@
                                         <div class="row">
                                             <div class="col-md-3 col-sm-4">
                                                 <div class="item-info-img">
-                                                    <img src="~/Public/images/testimonial/@item.Photo" alt="" class="img-responsive">
+                                                    <img src="~/Upload/@item.Photo" alt="" class="img-responsive">
                                                 </div>
                                             </div>
                                             <div class="col-md-9 col-sm-8">

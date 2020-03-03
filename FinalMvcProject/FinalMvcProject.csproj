@@ -347,6 +347,14 @@
     <Compile Include="Migrations\202003021734436_EditAdminModel.Designer.cs">
       <DependentUpon>202003021734436_EditAdminModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003031748543_deletemigrationrequaired.cs" />
+    <Compile Include="Migrations\202003031748543_deletemigrationrequaired.Designer.cs">
+      <DependentUpon>202003031748543_deletemigrationrequaired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003031848545_updatemodelsauthor.cs" />
+    <Compile Include="Migrations\202003031848545_updatemodelsauthor.Designer.cs">
+      <DependentUpon>202003031848545_updatemodelsauthor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Author.cs" />
@@ -2308,9 +2316,6 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Admin\Views\Blogs\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Blogs\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Blogs\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Settings\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Settings\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Settings\Index.cshtml" />
@@ -2351,6 +2356,9 @@
     <Content Include="Areas\Admin\Views\Treatments\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Treatments\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Register\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Blogs\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Blogs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Blogs\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Public\fonts\poppins\Poppins-Black.eot" />
     <Content Include="Public\fonts\poppins\Poppins-Black.ttf" />
@@ -2614,6 +2622,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003021734436_EditAdminModel.resx">
       <DependentUpon>202003021734436_EditAdminModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003031748543_deletemigrationrequaired.resx">
+      <DependentUpon>202003031748543_deletemigrationrequaired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003031848545_updatemodelsauthor.resx">
+      <DependentUpon>202003031848545_updatemodelsauthor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

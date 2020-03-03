@@ -8,11 +8,12 @@ using System.Web;
 using System.Web.Mvc;
 using FinalMvcProject.DAL;
 using FinalMvcProject.Filters;
+using FinalMvcProject.Helpers;
 using FinalMvcProject.Models;
 
 namespace FinalMvcProject.Areas.Admin.Controllers
 {
-    [Auth]
+   
     public class DepartmentsController : Controller
     {
         private FinalDoctorsDb db = new FinalDoctorsDb();
@@ -36,8 +37,18 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Icon,Desc,Content,Body,Status,Image")] Department department)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "Id,Title,Icon,Desc,Content,Body,Status,ImageUpload")] Department department)
         {
+            try
+            {
+                department.Image = FileManager.Upload(department.ImageUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Departments.Add(department);
@@ -68,8 +79,17 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Icon,Desc,Content,Body,Status,Image")] Department department)
+        public ActionResult Edit([Bind(Include = "Id,Title,Icon,Desc,Content,Body,Status,Image,ImageUpload")] Department department)
         {
+            try
+            {
+
+                department.Image = FileManager.Upload(department.ImageUpload);
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(department).State = EntityState.Modified;

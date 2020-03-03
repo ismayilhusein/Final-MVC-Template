@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using FinalMvcProject.DAL;
 using FinalMvcProject.Filters;
+using FinalMvcProject.Helpers;
 using FinalMvcProject.Models;
 
 namespace FinalMvcProject.Areas.Admin.Controllers
@@ -38,8 +39,18 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Photo,DepartmentId,Status")] Gallery gallery)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "Id,PhotoUpload,DepartmentId,Status")] Gallery gallery)
         {
+            try
+            {
+                gallery.Photo = FileManager.Upload(gallery.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Galleries.Add(gallery);
@@ -72,8 +83,17 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Photo,DepartmentId,Status")] Gallery gallery)
+        public ActionResult Edit([Bind(Include = "Id,Photo,PhotoUpload,DepartmentId,Status")] Gallery gallery)
         {
+            try
+            {
+                gallery.Photo = FileManager.Upload(gallery.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(gallery).State = EntityState.Modified;

@@ -11,7 +11,7 @@ namespace FinalMvcProject.Models
     public class Author
     {
         public int Id { get; set; }
-        [Required,MaxLength(20)]
+        [Required,MaxLength(200)]
         public string Name { get; set; }
         public List<Blog> Blogs { get; set; }
 

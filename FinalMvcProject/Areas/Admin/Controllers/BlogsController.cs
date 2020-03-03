@@ -21,14 +21,16 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // GET: Admin/Blogs
         public ActionResult Index()
         {
-            return View(db.Blogs.Include("Author").ToList());
+            var blogs = db.Blogs.Include(b => b.Author);
+            return View(blogs.ToList());
         }
 
        
+
         // GET: Admin/Blogs/Create
         public ActionResult Create()
         {
-            ViewBag.Authors = db.Authors.ToList();
+            ViewBag.AuthorId = new SelectList(db.Authors, "Id", "Name");
             return View();
         }
 
@@ -38,18 +40,20 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Create( Blog blog)
+        public ActionResult Create([Bind(Include = "Id,PhotoUpload,PhotoUploadPng,Title,CreatedAt,UpdateYear,UpdateMounth,UpdateDay,ShortBody,Body,AuthorId,Status")] Blog blog)
         {
             try
             {
-                blog.imagePng = FileManager.Upload(blog.PhotoUploadPng);
                 blog.Image = FileManager.Upload(blog.PhotoUpload);
+                blog.imagePng = FileManager.Upload(blog.PhotoUploadPng);
 
             }
             catch (Exception e)
             {
                 ModelState.AddModelError("PhotoUpload", e.Message);
             }
+
+
             if (ModelState.IsValid)
             {
                 db.Blogs.Add(blog);
@@ -71,9 +75,8 @@ namespace FinalMvcProject.Areas.Admin.Controllers
             if (blog == null)
             {
                 return HttpNotFound();
-
             }
-            ViewBag.Authors = db.Authors.ToList();
+            ViewBag.AuthorId = new SelectList(db.Authors, "Id", "Name", blog.AuthorId);
             return View(blog);
         }
 
@@ -82,30 +85,26 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Image,ImagePng,PhotoUpload,Title,CreatedAt,AuthorId,Body")] Blog blog)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Id,Image,imagePng,PhotoUpload,PhotoUploadPng,Title,CreatedAt,UpdateYear,UpdateMounth,UpdateDay,ShortBody,Body,AuthorId,Status")] Blog blog)
         {
-            if (blog.PhotoUpload != null)
+            try
             {
-                try
-                {
-                    FileManager.Delete(blog.Image);
-                    blog.Image = FileManager.Upload(blog.PhotoUpload);
-                }
-                catch (Exception e)
-                {
-                    ModelState.AddModelError("PhotoUpload", e.Message);
-                }
-            }
+                blog.Image = FileManager.Upload(blog.PhotoUpload);
+                blog.imagePng = FileManager.Upload(blog.PhotoUploadPng);
 
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(blog).State = EntityState.Modified;
-
-                db.Entry(blog).Property(s => s.Status == true).IsModified = false;
-
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.AuthorId = new SelectList(db.Authors, "Id", "Name", blog.AuthorId);
             return View(blog);
         }
 
@@ -121,6 +120,7 @@ namespace FinalMvcProject.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+            
             db.Blogs.Remove(blog);
             db.SaveChanges();
             return RedirectToAction("Index");

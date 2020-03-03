@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using FinalMvcProject.DAL;
 using FinalMvcProject.Filters;
+using FinalMvcProject.Helpers;
 using FinalMvcProject.Models;
 
 namespace FinalMvcProject.Areas.Admin.Controllers
@@ -39,8 +40,18 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Photo,FullName,Degrees,CreateDate,EndedDate,Status,Body,DepartmentId")] Doctors doctors)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "Id,PhotoUpload,FullName,Degrees,CreateDate,EndedDate,Status,Body,DepartmentId")] Doctors doctors)
         {
+            try
+            {
+                doctors.Photo = FileManager.Upload(doctors.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Doctors.Add(doctors);
@@ -73,8 +84,18 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Photo,FullName,Degrees,CreateDate,EndedDate,Status,Body,DepartmentId")] Doctors doctors)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Id,Photo,PhotoUpload,FullName,Degrees,CreateDate,EndedDate,Status,Body,DepartmentId")] Doctors doctors)
         {
+            try
+            {
+                doctors.Photo = FileManager.Upload(doctors.PhotoUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(doctors).State = EntityState.Modified;
