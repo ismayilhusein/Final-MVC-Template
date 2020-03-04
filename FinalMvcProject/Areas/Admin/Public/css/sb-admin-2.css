@@ -10584,15 +10584,15 @@ a:focus {
 }
 
 .bg-login-image {
-  background: url("https://source.unsplash.com/K4mSJ7kc0As/600x800");
-  background-position: center;
-  background-size: cover;
+    background: url("https://media.fromthegrapevine.com/assets/images/2016/2/dog-running-0223.jpg.824x0_q71_crop-scale.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
 .bg-register-image {
-  background: url("https://source.unsplash.com/Mv9hjnEUHR4/600x800");
-  background-position: center;
-  background-size: cover;
+    background: url("https://media.fromthegrapevine.com/assets/images/2016/2/dog-running-0223.jpg.824x0_q71_crop-scale.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
 .bg-password-image {

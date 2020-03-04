@@ -15,7 +15,7 @@ namespace FinalMvcProject.Controllers
             AboutViewModel model = new AboutViewModel
             {
                 Doctors = _context.Doctors.Include("Department").OrderByDescending(d => d.Id).Take(5).ToList(),
-                Settings =_context.Settings.FirstOrDefault(),
+                Settings =_context.Settings.OrderByDescending(s=>s.Id).FirstOrDefault(),
                 Missions = _context.Missions.OrderByDescending(m=>m.Id).Take(6).ToList(),
                 Service = _context.Services.FirstOrDefault(),
                 Services = _context.Services.Include("Departments").OrderByDescending(sl => sl.DepartmentsId).Take(6).ToList(),

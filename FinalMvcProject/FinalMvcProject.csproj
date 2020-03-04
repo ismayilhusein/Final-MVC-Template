@@ -132,6 +132,7 @@
     <Compile Include="Areas\Admin\Controllers\AuthController.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthorsController.cs" />
     <Compile Include="Areas\Admin\Controllers\BlogsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BookAppoitmentsController.cs" />
     <Compile Include="Areas\Admin\Controllers\CustomerSlidersController.cs" />
     <Compile Include="Areas\Admin\Controllers\DepartmentsController.cs" />
     <Compile Include="Areas\Admin\Controllers\DoctorLinksController.cs" />
@@ -354,6 +355,10 @@
     <Compile Include="Migrations\202003031848545_updatemodelsauthor.cs" />
     <Compile Include="Migrations\202003031848545_updatemodelsauthor.Designer.cs">
       <DependentUpon>202003031848545_updatemodelsauthor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003041447221_EditSettingModelsColumn.cs" />
+    <Compile Include="Migrations\202003041447221_EditSettingModelsColumn.Designer.cs">
+      <DependentUpon>202003041447221_EditSettingModelsColumn.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -2359,6 +2364,7 @@
     <Content Include="Areas\Admin\Views\Blogs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Blogs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Blogs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BookAppoitments\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Public\fonts\poppins\Poppins-Black.eot" />
     <Content Include="Public\fonts\poppins\Poppins-Black.ttf" />
@@ -2628,6 +2634,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003031848545_updatemodelsauthor.resx">
       <DependentUpon>202003031848545_updatemodelsauthor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003041447221_EditSettingModelsColumn.resx">
+      <DependentUpon>202003041447221_EditSettingModelsColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

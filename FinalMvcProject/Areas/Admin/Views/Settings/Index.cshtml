@@ -40,37 +40,38 @@
 
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.HeaderLogo)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.FooterLogo)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Location)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Country)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Number)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Email)
-                        </td>
+            <tr>
+                <td>
+                    <img src="~/Upload/@item.HeaderLogo" width="100" style="background-color:aliceblue" />
+                </td>
+                <td>
+                    <img src="~/Upload/@item.FooterLogo" width="100" style="background-color:aliceblue" />
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
 
 
-                        <td>
-                            <a href="@Url.Action("edit",new { id = item.Id })">
-                                <i class="fas fa-pencil-alt"></i>
-                            </a>
+                <td>
+                    <a href="@Url.Action("edit",new { id = item.Id })">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
 
-                            <a href="@Url.Action("delete",new { id = item.Id })" class="text-danger sweet-delete">
-                                <i class="fas fa-trash"></i>
-                            </a>
-                        </td>
-                    </tr>
+                    <a href="@Url.Action("delete",new { id = item.Id })" class="text-danger sweet-delete">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
                 }
 
             </table>

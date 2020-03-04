@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using FinalMvcProject.DAL;
 using FinalMvcProject.Filters;
+using FinalMvcProject.Helpers;
 using FinalMvcProject.Models;
 
 namespace FinalMvcProject.Areas.Admin.Controllers
@@ -34,8 +35,20 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,HeaderLogo,FooterLogo,Text,Location,Country,Number,Email,AboutImage,AboutBody")] Setting setting)
+        [ValidateInput(false)]
+        public ActionResult Create( Setting setting)
         {
+            try
+            {
+                setting.AboutImage = FileManager.Upload(setting.ImageUpload);
+                setting.HeaderLogo = FileManager.Upload(setting.HeaderUpload);
+                setting.FooterLogo = FileManager.Upload(setting.FooterUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Settings.Add(setting);
@@ -66,8 +79,20 @@ namespace FinalMvcProject.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,HeaderLogo,FooterLogo,Text,Location,Country,Number,Email,AboutImage,AboutBody")] Setting setting)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "Id,HeaderLogo,HeaderUpload,FooterUpload,FooterLogo,Text,Location,Country,Number,Email,AboutImage,ImageUpload,AboutBody")] Setting setting)
         {
+            try
+            {
+                setting.AboutImage = FileManager.Upload(setting.ImageUpload);
+                setting.HeaderLogo = FileManager.Upload(setting.HeaderUpload);
+                setting.FooterLogo = FileManager.Upload(setting.FooterUpload);
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("PhotoUpload", e.Message);
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(setting).State = EntityState.Modified;
